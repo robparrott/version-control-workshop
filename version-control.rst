@@ -197,7 +197,7 @@ There is no spoon.
 
 .. image:: nospoon.png
    :align: center
-   :width: 300
+   :width: 600
 
 Why git?
 ========
