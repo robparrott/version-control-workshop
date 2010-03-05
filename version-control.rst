@@ -30,41 +30,41 @@ Why version control?
 Protection
 ==========
 
-- Version control is like having infinite undo.
+Version control is like having infinite undo.
 
-.. class:: handout
+.. container:: handout
 
-If you accidentally delete a chunk of code or find a bug introduced a year
-ago it's easy to go back in time and make things better.
+   If you accidentally delete a chunk of code or find a bug introduced a
+   year ago it's easy to go back in time and make things better.
 
 Isolation
 =========
 
 Version control makes it easy to test out changes to your code.
 
-.. class:: handout
+.. container:: handout
 
-You can test out extensive changes in dedicated branches of your code,
-merging them back in or discarding them at the end of the process.
+   You can test out extensive changes in dedicated branches of your code,
+   merging them back in or discarding them at the end of the process.
 
 Collaboration
 =============
 
 A VCS manages the tasks of propogating changes and handling conflicts.
 
-.. class:: handout
-
-This makes it easier for multiple developers to work on the same project.
+.. container:: handout
+ 
+   This makes it easier for multiple developers to work on the same project.
 
 Accountability
 ==============
 
 A VCS makes it easier to identify the provenance of a specific change.
 
-.. class:: handout
+.. container:: handout
 
-You can identify when the change was introduced, who made, and you may even
-find information about why the change was made.
+   You can identify when the change was introduced, who made, and you may
+   even find information about why the change was made.
 
 History of version control
 ==========================
@@ -199,6 +199,20 @@ There is no spoon.
    :align: center
    :width: 600
 
+.. container:: handout
+
+   In the world of distributed version control, the idea of a central
+   repository is a social construct rather than a technical one.  While
+   some projects may find it convenient to identify a central repository,
+   git (and other DVC systems) do not enforce a hub and spoke
+   configuration.
+
+   For some of my own projects I have something of an "inverted tree": my
+   working copies push to two remote repositories.  One is a "personal"
+   repository, which I use to coordinate my work between my office, my
+   laptop, and so forth.  The other is a "public" repository, where I push
+   my code when I want others to see it.
+
 Why git?
 ========
 
@@ -243,9 +257,101 @@ commit`` to commit them to the (local) repository::
 Using git: What's changed?
 ==========================
 
+Use ``git status`` to see a list of modified files::
+
+  git status
+
+.. container:: handout
+
+   The output will look something like this::
+
+     # On branch master
+     # Changed but not updated:
+     #   (use "git add <file>..." to update what will be committed)
+     #   (use "git checkout -- <file>..." to discard changes in working directory)
+     #
+     #	modified:   version-control.rst
+     #
+     # Untracked files:
+     #   (use "git add <file>..." to include in what will be committed)
+     #
+     #	examples/
+     no changes added to commit (use "git add" and/or "git commit -a")
+
+   The files listed as "changed but not updated" are files that you have
+   modified but not yet added to the repository.  "Untracked files" are
+   files about which git knows nothing.
+
+Using git: What's changed?
+==========================
+
 Use ``git diff`` to see pending changes in your working copy::
 
   git diff
+
+.. container:: handout
+
+   The output of ``git diff`` is standard diff output, e.g.::
+
+     diff --git a/version-control.rst b/version-control.rst
+     index e518192..b1c519a 100644
+     --- a/version-control.rst
+     +++ b/version-control.rst
+     @@ -243,6 +243,34 @@ commit`` to commit them to the (local) repository::
+      Using git: What's changed?
+      ==========================
+      
+     +Use ``git status`` to see a list of modified files::
+     +
+     +  git status
+     +
+     +.. container:: handout
+     +
+     +   The output will look something like this::
+     +
+
+Using git: What's changed?
+==========================
+
+You can also use ``git diff`` to see the changes between arbitrary
+revisions of your project::
+
+  - Changes in working copy vs. previous commit::
+
+      git diff <commit>
+
+  - Changes between two previous commits::
+
+      git diff <commit1> <commit2>
+
+Using git: the index
+====================
+
+- Git is not really just like Subversion.
+- The *index* is a staging area between your working copy and your local
+  repository.
+- ``git add`` adds files to the index; ``git commit`` moves files from the
+  index to the repository.
+
+Using git: the index
+====================
+
+- ``git diff`` is the difference between your working copy and the index.
+- ``git diff HEAD`` is the difference between your working copy and the
+  local repository.
+- ``git diff --cached`` is the difference between the index and the local
+  repository.
+
+Using git: the index
+====================
+
+Refer back to this illustration if you get confused:
+
+.. image:: git-transport.png
+
+.. container:: handout
+
+   (This image used with permission.)
 
 Plays well with others
 ======================
@@ -253,7 +359,7 @@ Plays well with others
 Git can integrate with other version control systems.  In this section
 we'll look briefly at:
 
-- Using git as a Subversin client
+- Using git as a Subversion client
 - Import a CVS repository into git
 
 git as a Subversion client
@@ -315,6 +421,19 @@ Git and to version control in general:
 If you are looking explicitly for additional tutorials:
 
 - http://delicious.com/seas_ircs/versioncontrol+tutorial
+
+Metadata
+========
+
+This presentation is available online:
+
+- via Git::
+
+    git clone git://git.seas.harvard.edu/lars/version-control-tutorial
+
+- via Subversion::
+  
+    svn co http://source.seas.harvard.edu/svn/version-control-tutorial
 
 .. _rcs: http://www.gnu.org/software/rcs/
 .. _cvs: http://www.nongnu.org/cvs/
