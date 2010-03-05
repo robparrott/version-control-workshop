@@ -69,7 +69,7 @@ find information about why the change was made.
 History of version control
 ==========================
 
-In the beginning, there was RCS.
+In the beginning, there was RCS_.
 
 - managed files, not projects.
 - uses locking to manage conflicts.
@@ -97,11 +97,11 @@ CVS begat Subversion_.
 History of version control
 ==========================
 
-The DVCS explosion.
+The DVCS explosion (c. 2005).
 
 .. image:: kaboom.png
    :align: center
-   :width: 500
+   :width: 600
 
 History of version control
 ==========================
@@ -266,6 +266,7 @@ This may take a while::
   cvs login
   git cvsimport -o cvs_head -C my-project
 
+.. _rcs: http://www.gnu.org/software/rcs/
 .. _cvs: http://www.nongnu.org/cvs/
 .. _subversion: http://subversion.tigris.org/
 .. _git: http://git-scm.org/
