@@ -2,6 +2,11 @@
 An introduction to version control
 ==================================
 
+:Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+:IRCS: http://ircs.seas.harvard.edu/
+:Support: | ircshelp@seas.harvard.edu
+          | http://ircs.seas.harvard.edu/userdocs/
+
 .. class:: handout
 
 This document may be viewed as a slideshow_.
@@ -100,6 +105,7 @@ History of version control
 The DVCS explosion (c. 2005).
 
 .. image:: kaboom.png
+   :class: centered
    :align: center
    :width: 600
 

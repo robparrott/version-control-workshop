@@ -56,7 +56,7 @@ ul.urls {list-style: none; display: inline; margin: 0;}
 .urls li {display: inline; margin: 0;}
 .external {border-bottom: 1px dotted gray;}
 html>body .external {border-bottom: none;}
-.external:after {content: " \274F"; font-size: smaller; color: #77B;}
+.external:after {font-size: smaller; color: #77B;}
 
 .incremental, .incremental *, .incremental *:after {
   color: white; visibility: visible; border: 0; border: 0;}
@@ -120,6 +120,11 @@ p.admonition-title {
 		left center;
 }
 */
+
+.centered {
+	position: absolute;
+	top: 70px;
+}
 
 /* diagnostics */
 /*
