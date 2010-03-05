@@ -1,5 +1,5 @@
-THEME = small-white
-THEME_ARG = --theme $(THEME)
+THEME = seas
+THEME_ARG = --theme-url ui/$(THEME)
 
 HTMLDOCS = version-control.html version-control.s5.html
 SVGDOCS = $(shell ls *.svg)

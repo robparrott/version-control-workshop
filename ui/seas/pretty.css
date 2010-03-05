@@ -3,6 +3,7 @@
 
 html, body {margin: 0; padding: 0;}
 body {background: white url(seas-logo.png) no-repeat top left; color: black;}
+
 :link, :visited {text-decoration: none; color: #00C;}
 #controls :active {color: #888 !important;}
 #controls :focus {outline: 1px dotted #222;}
@@ -109,7 +110,8 @@ tt.literal {background-color: #d0d0d0; border-bottom: 1px dotted}
 pre.literal-block, pre.doctest-block {background-color: #d0d0d0;
 	border: thin solid black; padding: 1ex;}
 
-div.admonition {background-color: #F3F781; border: thin solid black;}
+div.admonition {background-color: #F3F781; border: thin solid black;
+	font-size: smaller;}
 
 /*
 p.admonition-title {
