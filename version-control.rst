@@ -209,6 +209,44 @@ These are the reasons I started using Git.
 - Easy ("cheap") branching
 - Fast
 
+Using git: basics
+=================
+
+- Most commit commands have built-in documentation you can access with the
+  ``--help`` option::
+
+    git init --help
+
+- If you pretend that git is sort of like Subversion you will mostly be
+  okay.
+
+Using git: Creating a repository
+================================
+
+Use ``git init`` to create a git repository in your current directory::
+
+  git init
+
+.. container:: handout
+
+   This creates a ``.git`` subdirectory in the current directory.
+
+Using git: Adding files
+=======================
+
+Use ``git add`` to select files to add to the repository, and use ``git
+commit`` to commit them to the (local) repository::
+
+  git add .
+  git commit -m "initial import"
+
+Using git: What's changed?
+==========================
+
+Use ``git diff`` to see pending changes in your working copy::
+
+  git diff
+
 Plays well with others
 ======================
 
@@ -257,14 +295,26 @@ Requires:
 
 - cvsps_
 
-Importing a CVS respository
-===========================
+Importing a CVS repository
+==========================
 
 This may take a while::
 
   export CVSHOME=:pserver:anonymous@example.com
   cvs login
   git cvsimport -o cvs_head -C my-project
+
+More information
+================
+
+We have compiled a list of helpful or interesting links related to
+Git and to version control in general:
+
+- http://delicious.com/seas_ircs/versioncontrol
+
+If you are looking explicitly for additional tutorials:
+
+- http://delicious.com/seas_ircs/versioncontrol+tutorial
 
 .. _rcs: http://www.gnu.org/software/rcs/
 .. _cvs: http://www.nongnu.org/cvs/
