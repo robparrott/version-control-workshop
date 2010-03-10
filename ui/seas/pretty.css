@@ -25,7 +25,7 @@ div#footer {font-family: sans-serif; color: #444;
 #footer h1 {display: block; padding: 0 1em;}
 #footer h2 {display: block; padding: 0.8em 1em 0;}
 
-.slide {font-size: 1.2em;}
+.slide {font-size: 1.2em; border-top: thin solid black;}
 .slide h1 {padding-top: 0; z-index: 1; margin: 0; font: bold 150% sans-serif;}
 .slide h2 {font: bold 120% sans-serif; padding-top: 0.5em;}
 .slide h3 {font: bold 100% sans-serif; padding-top: 0.5em;}
@@ -45,7 +45,7 @@ div#controls form {position: absolute; bottom: 0; right: 0; width: 100%;
 #currentSlide {text-align: center; font-size: 0.5em; color: #444;
   font-family: sans-serif; font-weight: bold;}
 
-#slide0 {padding-top: 0em}
+#slide0 {padding-top: 0em; border: none;}
 #slide0 h1 {position: static; margin: 1em 0 0; padding: 0;
   font: bold 2em sans-serif; white-space: normal; background: transparent;}
 #slide0 h2 {font: bold italic 1em sans-serif; margin: 0.25em;}
