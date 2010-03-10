@@ -1,6 +1,7 @@
 THEME = seas
 THEME_ARG = --theme-url ui/$(THEME)
 
+RSTDOCS = $(shell ls *.rst)
 HTMLDOCS = version-control.html version-control.s5.html
 SVGDOCS = $(shell ls *.svg)
 PNGDOCS = $(SVGDOCS:.svg=.png)
@@ -19,4 +20,6 @@ all: $(HTMLDOCS) $(PNGDOCS)
 
 clean:
 	rm -f $(GENERATED)
+
+$(HTMLDOCS): $(RSTDOCS)
 
