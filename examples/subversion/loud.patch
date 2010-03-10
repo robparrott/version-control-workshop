@@ -1,0 +1,50 @@
+Index: src/hello.c
+===================================================================
+--- src/hello.c	(revision 2)
++++ src/hello.c	(working copy)
+@@ -27,6 +27,7 @@
+   { "greeting", required_argument, NULL, 'g' },
+   { "help", no_argument, NULL, 'h' },
+   { "next-generation", no_argument, NULL, 'n' },
++  { "loud", no_argument, NULL, 'l' },
+   { "traditional", no_argument, NULL, 't' },
+   { "version", no_argument, NULL, 'v' },
+   { NULL, 0, NULL, 0 }
+@@ -34,7 +35,7 @@
+ 
+ /* Different types of greetings; only one per invocation.  */
+ typedef enum {
+-  greet_gnu, greet_new, greet_traditional, greet_user
++  greet_gnu, greet_new, greet_traditional, greet_user, greet_loud,
+ } greeting_type;
+ 
+ /* Forward declarations.  */
+@@ -66,7 +67,7 @@
+      This is implemented in the Gnulib module "closeout".  */
+   atexit (close_stdout);
+ 
+-  while ((optc = getopt_long (argc, argv, "g:hntv", longopts, NULL)) != -1)
++  while ((optc = getopt_long (argc, argv, "g:hntvl", longopts, NULL)) != -1)
+     switch (optc)
+       {
+       /* --help and --version exit immediately, per GNU coding standards.  */
+@@ -85,6 +86,9 @@
+       case 'n':
+         g = greet_new;
+         break;
++      case 'l':
++        g = greet_loud;
++        break;
+       case 't':
+         g = greet_traditional;
+         break;
+@@ -121,6 +125,9 @@
+ +---------------+\n\
+ "));
+ 
++  else if (g == greet_loud)
++    puts (_("HELLO WORLD!"));
++
+   else if (g == greet_user)
+     puts (greeting_msg);
+ 
