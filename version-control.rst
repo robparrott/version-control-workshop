@@ -16,23 +16,9 @@ This document may be viewed as a slideshow_.
 .. contents::
    :class: handout
 
-Who are you?
-============
+.. _instructional and research computing services: http://ircs.seas.harvard.edu/
 
-| Lars Kellogg-Stedman <lars@seas.harvard.edu>
-| Senior Technologist, Instructional and Research Computing Services (IRCS_)
-
-.. admonition:: **Please ask me lots of questions.**
-
-   Interactive presentations are much more fun.
-
-Why are we here?
-================
-
-- An introduction to version control.
-- Some basic recipes for using Subversion_.
-- Some basic recipes for using git_.
-- Questions and answers.
+.. include:: intro.rst
 
 .. include:: why_use_vc.rst
 
@@ -45,6 +31,4 @@ Why are we here?
 .. include:: git.rst
 
 .. include:: seealso.rst
-
-.. _instructional and research computing services: http://ircs.seas.harvard.edu/
 
