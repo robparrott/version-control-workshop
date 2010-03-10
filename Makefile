@@ -2,7 +2,8 @@ THEME = seas
 THEME_ARG = --theme-url ui/$(THEME)
 
 RSTDOCS = $(shell ls *.rst)
-HTMLDOCS = version-control.html version-control.s5.html
+HTMLDOCS = version-control.html version-control.s5.html \
+	   subversion-example.html
 SVGDOCS = $(shell ls *.svg)
 PNGDOCS = $(SVGDOCS:.svg=.png)
 
@@ -24,5 +25,7 @@ clean:
 view: all
 	firefox version-control.html
 
-$(HTMLDOCS): $(RSTDOCS)
+version-control.html version-control.s5.html : $(RSTDOCS)
 
+subversion-example.rst: examples/subversion/run.sh
+	( cd examples/subversion && sh ./run.sh -nf ) > $@
