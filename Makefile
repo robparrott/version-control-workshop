@@ -21,5 +21,8 @@ all: $(HTMLDOCS) $(PNGDOCS)
 clean:
 	rm -f $(GENERATED)
 
+view: all
+	firefox version-control.html
+
 $(HTMLDOCS): $(RSTDOCS)
 
