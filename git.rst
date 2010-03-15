@@ -132,7 +132,7 @@ Using git: the index
 
 Refer back to this illustration if you get confused:
 
-.. image:: git-transport.png
+.. image:: images/git-transport.png
 
 .. container:: handout
 

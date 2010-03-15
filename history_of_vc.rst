@@ -51,7 +51,7 @@ History of version control
 
 The version control explosion.
 
-.. image:: kaboom.png
+.. image:: images/kaboom.png
    :class: center
    :align: center
    :width: 600
@@ -90,7 +90,7 @@ Darcs
 Darcs_ was developed in 2002 as a result of the author's experience with
 `Gnu arch`_.
 
-.. class::: handout
+.. class:: handout
 
 Monotone
 --------

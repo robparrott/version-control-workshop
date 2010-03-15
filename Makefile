@@ -4,7 +4,7 @@ THEME_ARG = --theme-url ui/$(THEME)
 RSTDOCS = $(shell ls *.rst)
 HTMLDOCS = version-control.html version-control.s5.html \
 	   subversion-example.html
-SVGDOCS = $(shell ls *.svg)
+SVGDOCS = $(shell ls images/*.svg)
 PNGDOCS = $(SVGDOCS:.svg=.png)
 
 GENERATED = $(HTMLDOCS) $(PNGDOCS)

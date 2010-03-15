@@ -10,7 +10,7 @@ Centralized version control
 
 Developers check out working copies.
 
-.. image:: central-1.png
+.. image:: images/central-1.png
    :align: center
    :width: 300
 
@@ -19,7 +19,7 @@ Centralized version control
 
 Someone commits bad code to repository.
 
-.. image:: central-2.png
+.. image:: images/central-2.png
    :align: center
    :width: 300
 
@@ -28,7 +28,7 @@ Centralized version control
 
 Changes are visible to everyone.
 
-.. image:: central-3.png
+.. image:: images/central-3.png
    :align: center
    :width: 300
 
@@ -42,7 +42,7 @@ Distributed version control
 
 Developers check out working copies.
 
-.. image:: central-1.png
+.. image:: images/central-1.png
    :align: center
    :width: 300
 
@@ -51,7 +51,7 @@ Distributed version control
 
 Someone commits bad code to local repository.
 
-.. image:: dvcs-2.png
+.. image:: images/dvcs-2.png
    :align: center
    :width: 300
 
@@ -60,7 +60,7 @@ Distributed version control
 
 Fixes locally and pushes to remote repository.
 
-.. image:: dvcs-3.png
+.. image:: images/dvcs-3.png
    :align: center
    :width: 300
 
@@ -69,7 +69,7 @@ Distributed version control
 
 Everyone is happy.
 
-.. image:: dvcs-4.png
+.. image:: images/dvcs-4.png
    :align: center
    :width: 300
 
@@ -78,7 +78,7 @@ Distributed version control
 
 There is no spoon.
 
-.. image:: nospoon.png
+.. image:: images/nospoon.png
    :align: center
    :width: 600
 
