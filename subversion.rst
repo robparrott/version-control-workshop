@@ -1,8 +1,14 @@
-Subversion
-==========
+svn: Introduction
+=================
 
-Creating a repository
-=====================
+Subversion is a centralized version control system developed to address the
+shortcomings of CVS.
+
+svn: Basics
+===========
+
+svn: Creating a repository
+==========================
 
 Use ``svnadmin create`` to create a new repository::
 
@@ -11,6 +17,10 @@ Use ``svnadmin create`` to create a new repository::
 Where *REPOS_PATH* is a local filesystem path.
 
 .. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svnadmin.html
 
    If you will be accessing the repository remotely (or offering remote
    access to collaborators), you will need to decide what sort of remote
@@ -32,8 +42,8 @@ Where *REPOS_PATH* is a local filesystem path.
    
    You could then access this using the URL file://$HOME/repos/hello.
 
-Checking out a remote repository
-================================
+svn: Checking out a remote repository
+=====================================
 
 Use the ``svn checkout`` command to get a working copy of a Subversion
 repository::
@@ -59,8 +69,8 @@ repository::
      $ svn checkout \
      https://source.seas.harvard.edu/svn/version-control-workshop
 
-Adding files: import
-====================
+svn: Adding files: import
+=========================
 
 `svn import` imports an entire tree into an existing Subversion
 repository::
@@ -76,8 +86,7 @@ repository::
    For example, if I wanted to start using Subversion to track changes to
    the hello project, I might do something like this::
 
-     $ cd hello-2.5
-     $ svn import https://source.seas.harvard.edu/svn/hello
+     $ svn import hello-2.5 https://source.seas.harvard.edu/svn/hello/trunk
 
    And the output would look something like this::
 
@@ -97,12 +106,12 @@ repository::
    would still need to issue an ``svn checkout`` to get a working copy of
    the repository.
 
-Commiting changes
-=================
+svn: Commiting changes
+======================
 
 Use ``svn commit`` to send changes back to the repository::
 
-  commit [PATH ...]
+  svn commit [PATH ...]
 
 .. container:: handout
 
@@ -110,16 +119,13 @@ Use ``svn commit`` to send changes back to the repository::
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
 
-Adding files: add
-=================
+svn: Adding files: add
+======================
 
 `svn add` schedules individual files or directories in your working copy to
-be comitted to the repository::
+be added to the repository next time you commit your working copy::
 
   svn add PATH [PATH ...]
-
-(You will need to commit your changes to actually get the files into the
-repository.)
 
 .. container:: handout
 
@@ -138,15 +144,39 @@ repository.)
      Transmitting file data .
      Committed revision 2.
 
-What's changed: files
-=====================
+svn: What's changed: status
+===========================
 
-What's changed: diffs
-=====================
+.. container:: handout
 
-Updating your working copy
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
+
+svn: What's changed: diffs
 ==========================
 
-Removing files
-==============
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.diff.html
+
+svn: Updating your working copy
+===============================
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
+
+svn: Removing files
+===================
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.delete.html
 

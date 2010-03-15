@@ -13,10 +13,11 @@ Why version control?
    what has changed.
 
    You release some code, and a month later someone finds a critical bug.
-   In the intervening month your code has diverged substantially, making it
-   difficult to fix what may be a simple problem.  Version control makes it
-   easy to return to a previous state of your code in order to fix a
-   problem without losing all of your intervening work.
+   In the intervening month your code has diverged substantially from your
+   previous release, making it difficult to fix what may be a simple
+   problem.  Version control makes it easy to return to a previous state of
+   your code in order to fix a problem without losing all of your
+   intervening work.
 
 Why version control?
 ====================
@@ -30,6 +31,6 @@ Why version control?
 
 - Collaboration.
 
-  Version control makes it easy for multiple developers to work on the same
+  Version control makes it easier for multiple developers to work on the same
   project.
 

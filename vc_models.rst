@@ -3,7 +3,7 @@ Centralized version control
 
 - CVS, Subversion
 - One main repository
-- Commits go directly to central repository.
+- Commits go to central repository
 
 Centralized version control
 ===========================
@@ -35,7 +35,7 @@ Changes are visible to everyone.
 Distributed version control
 ===========================
 
-Most modern version control systems use a distributed model.
+Most recent version control systems use a distributed model.
 
 Distributed version control
 ===========================
@@ -95,4 +95,20 @@ There is no spoon.
    repository, which I use to coordinate my work between my office, my
    laptop, and so forth.  The other is a "public" repository, where I push
    my code when I want others to see it.
+
+Centralized vs. Distributed
+===========================
+
+It may sound like I am suggesting that distributed version control is
+generally better than centralized version control.
+
+- I am.
+- There are other opinions.
+
+.. container:: handout
+
+   In particular, some of the developers of Subversion have suggested that
+   a distributed model makes it less likely that people will share code
+   with others (while in a centralized system they are largely forced to if
+   they want to take advantage of the version control system).
 
