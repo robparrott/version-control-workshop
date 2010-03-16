@@ -1,8 +1,8 @@
 More information
 ================
 
-We have compiled a list of helpful or interesting links related to
-Git and to version control in general:
+We have compiled a list of links related to Git and to version control in
+general:
 
 - http://delicious.com/seas_ircs/versioncontrol
 
@@ -15,7 +15,7 @@ Metadata
 
 This presentation is available online:
 
-- http://people.seas.harvard.edu/~lars/workshops/version-control/
+- http://people.seas.harvard.edu/~lars/workshops/version-control-workshop/
 
 Metadata
 ========
