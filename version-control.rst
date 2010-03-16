@@ -22,6 +22,8 @@ This document may be viewed as a slideshow_.
 
 .. include:: why_use_vc.rst
 
+.. include:: vocabulary.rst
+
 .. include:: history_of_vc.rst
 
 .. include:: vc_models.rst

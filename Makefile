@@ -13,7 +13,8 @@ RSTDOCS = \
 	subversion.rst \
 	vc_models.rst \
 	version-control.rst \
-	why_use_vc.rst
+	why_use_vc.rst \
+	vocabulary.rst
 
 HTMLDOCS = version-control.html version-control.s5.html \
 	   subversion-example.html \
