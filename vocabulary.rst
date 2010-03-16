@@ -4,21 +4,30 @@ Vocabulary
 *Repository*
   A database containing the files and change history of your project.
 
-*Working tree/Working copy*
+*Working tree* or *Working copy*
   A local copy of files from a repository.
-
-*Tag*
-  Identifies a point-in-time snapshot of your project.
 
 Vocabulary
 ==========
 
-*Branch*
-  An isolated stream of changes to your project.
-
 *Commit*
-  To save your changes back to the repository.
+  To save your changes back to the repository.  Also a specific set of
+  changes (in this sense a synonym for *revision*).
 
 *Merge*
   To combine two sets of changes to the files in your project.
+
+Vocabulary
+==========
+
+*Tag*
+  Identifies a point-in-time snapshot of your project.
+
+*Branch*
+  An isolated stream of changes to your project.
+
+Vocabulary
+==========
+
+.. image:: images/branchestags.png
 
