@@ -1,3 +1,7 @@
+RST2HTML	= rst2html
+RST2S5		= rst2s5
+INKSCAPE	= inkscape
+
 THEME = seas
 THEME_ARG = --theme-url ui/$(THEME)
 
@@ -28,12 +32,12 @@ DESTDIR = $(HOME)/public_html/version-control-workshop
 GENERATED = $(HTMLDOCS) $(PNGDOCS)
 
 %.html: %.rst
-	rst2html $< $@
+	$(RST2HTML) $< $@
 %.s5.html: %.rst
-	rst2s5 $(THEME_ARG) $< $@
+	$(RST2S5) $(THEME_ARG) $< $@
 
 %.png: %.svg
-	inkscape -D -f $< -e $@
+	$(INKSCAPE) -D -f $< -e $@
 
 all: $(HTMLDOCS) $(PNGDOCS) $(STATIC)
 
