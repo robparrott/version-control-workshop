@@ -37,7 +37,7 @@ GENERATED = $(HTMLDOCS) $(PNGDOCS)
 	$(RST2S5) $(THEME_ARG) $< $@
 
 %.png: %.svg
-	$(INKSCAPE) -D -f $< -e $@
+	env LANG=C DISPLAY= $(INKSCAPE) -D -f $< -e $@
 
 all: $(HTMLDOCS) $(PNGDOCS) $(STATIC)
 
