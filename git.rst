@@ -238,6 +238,22 @@ Cloning a remote repository::
    repository contains ``trunk/``, ``tags/``, and ``branches/``
    directories).  The ``HEAD`` of your working copy will track the trunk.
 
+   This instructs git to clone the *entire* repository, including the
+   complete revision history. This may take a while for repositories with a
+   long history.  You can use the ``-r`` option to request a partial
+   history.  From the man page::
+
+      -r <ARG>, --revision <ARG>
+          Used with the fetch command.
+
+          This allows revision ranges for partial/cauterized history to be
+          supported. $NUMBER, $NUMBER1:$NUMBER2 (numeric ranges),
+          $NUMBER:HEAD, and BASE:$NUMBER are all supported.
+
+          This can allow you to make partial mirrors when running fetch; but
+          is generally not recommended because history will be skipped and
+          lost.
+
 git: Integrating w/ Subversion
 ==============================
 
