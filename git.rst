@@ -64,6 +64,14 @@ git: Adding files
    Unlike Subversion, if you modify a file you (generally) need to ``git
    add`` that file in order to make the changes part of the next commit.
 
+   Use the ``git reset`` command to "undo" an add operation::
+
+     git reset HEAD
+
+   This resets the index but leaves your working directory untouched. You
+   can also use ``git reset`` to revert to a previous commit; read the
+   documentation for more information.
+
 git: Committing changes
 =======================
 
@@ -162,6 +170,9 @@ Use ``git diff`` to see pending changes in your working copy::
    - Changes between two previous commits::
 
        git diff <commit1> <commit2>
+
+git: Creating a branch
+======================
 
 git: Cloning a remote repository
 ================================
@@ -328,6 +339,24 @@ Committing your changes back to the Subversion repository::
 
      $ git commit -m 'a meaningful commit message' -a
 
+   And then send your changes to the Subversion repository::
+ 
+     $ git svn dcommit
+     Committing to https://source.seas.harvard.edu/svn/version-control-workshop/trunk ...
+       M	seealso.rst
+     Committed r38
+       M	seealso.rst
+     r38 = 03254f2c0b3d5e068a87566caef84454558b85b0 (refs/remotes/trunk)
+     No changes between current HEAD and refs/remotes/trunk
+     Resetting to the latest refs/remotes/trunk
+     Unstaged changes after reset:
+     M	git.rst
+       M	git.rst
+     Committed r39
+       M	git.rst
+     r39 = d1f884a3f945f6083541e28ab7a09ca8efc6343b (refs/remotes/trunk)
+     No changes between current HEAD and refs/remotes/trunk
+     Resetting to the latest refs/remotes/trunk
 
 git: Integrating w/ CVS
 =======================
@@ -350,4 +379,12 @@ This may take a while::
   export CVSHOME=:pserver:anonymous@example.com
   cvs login
   git cvsimport -o cvs_head -C my-project
+
+git: Frontends
+==============
+
+The `git wiki`_ has a `list of frontends`_ for git.
+
+.. _git wiki: http://git.wiki.kernel.org/index.php/Main_Page
+.. _list of frontends: http://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces
 
