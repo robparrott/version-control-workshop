@@ -12,7 +12,7 @@ git: Basics
 
     git init --help
 
-- If you pretend that git is sort of like Subversion you will mostly be
+- If you pretend that git is sort of like Subversion you will usually be
   okay.
 
 git: Creating a repository
@@ -30,13 +30,20 @@ Use ``git init`` to create a git repository in your current directory::
 
    ``git init`` creates a git repository (named ``.git``) in your current
    working directory.  You will add files to this repository using ``git
-   add``.
+   add``.  This gives you a repository (the ``.git`` directory) and a
+   working copy (everything else).
+
+   If you are creating a repository that people will be accessing remotely,
+   you will normally want to create a "bare" repository, which consists of
+   just the contents of the ``.git`` directory and no working copy.  You do
+   this with the ``-b`` flag::
+
+     $ git init -b
 
 git: Adding files
 =================
 
-``git add`` schedules files to be committed to the repository (you will
-need to issue a ``git commit``).
+``git add`` schedules files to be committed to the repository.
 
   git add PATH [PATH ...]
 
@@ -46,10 +53,8 @@ need to issue a ``git commit``).
 
    .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-add.html
 
-   Note that unlike Subversion, you will need to explicitly add any changes
-   to the repository.  In other words, if you modify a file you (generally)
-   need to ``git add`` that file in order to make it part of the next
-   commit.
+   Unlike Subversion, if you modify a file you (generally) need to ``git
+   add`` that file in order to make the changes part of the next commit.
 
 git: Committing changes
 =======================
@@ -158,12 +163,54 @@ Use ``git diff`` to see pending changes in your working copy::
 
        git diff <commit1> <commit2>
 
+git: Cloning a remote repository
+================================
+
+Use the ``git clone`` command to check out a working copy of a remote
+repository::
+
+  git clone REPOSITORY [DIRECTORY]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-clone.html
+
+   ``git clone`` will clone the remote repository to a new directory in
+   your current directory named after the repository, unless you explicitly
+   provide a name with the *DIRECTORY* argument.
+
+git: Updating your working copy
+===============================
+
+Use ``git pull`` to update your local repository from the remote repository
+and merge changes into your working copy::
+
+  git pull [REPOSITORY [REFSPEC]]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-pull.html
+
+   ``git pull`` by itself will pull changes from the remote repository
+   defined by the ``branch.master.remote`` config option (which will
+   typically be the repository from which you originally cloned your
+   working copy).  If there are multiple remote repositories associated
+   with your working copy, you can specify a repository (and branch) on the
+   command line, e.g, to pull changes from the branch *master* at a remote
+   named *origin*::
+
+     $ git pull origin master
+
 git: Pushing changes
 ====================
 
 Use ``git push`` to send your committed changes to a remote repository::
 
-  git push [REPOSITORY [REFSPEC] ]
+  git push [REPOSITORY [REFSPEC]]
 
 .. container:: handout
 
@@ -176,7 +223,10 @@ Use ``git push`` to send your committed changes to a remote repository::
    typically be the repository from which you originally cloned your
    working copy).  If there are multiple remote repositories associated
    with your working copy, you can specify a repository (and branch) on the
-   command line.
+   command line, e.g, to push your changes to branch *master* at a remote
+   named *origin*::
+
+     $ git push origin master
 
 git: the index
 ==============

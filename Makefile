@@ -57,7 +57,8 @@ view: all
 	firefox version-control.html
 
 install: all
-	find $(HTMLDOCS) $(PNGDOCS) $(STATIC) -print | cpio -pd $(DESTDIR)
+	find $(HTMLDOCS) $(PNGDOCS) $(STATIC) -print | cpio -pud $(DESTDIR)
+	test -x deploy && ./deploy $(DESTDIR) || exit 0
 
 version-control.html version-control.s5.html : $(RSTDOCS)
 
