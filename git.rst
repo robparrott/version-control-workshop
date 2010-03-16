@@ -4,16 +4,17 @@ git: Introduction
 Git is a distributed version control system originally developed by Linus
 Torvals as a replacement for BitKeeper.
 
-git: Basics
-===========
+git: Getting help
+=================
 
 - Most commands have built-in documentation you can access with the
   ``--help`` option::
 
     git init --help
 
-- If you pretend that git is sort of like Subversion you will usually be
-  okay.
+- Also available via ``man``, e.g::
+
+    man git-init
 
 git: Creating a repository
 ==========================

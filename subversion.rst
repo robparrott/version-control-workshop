@@ -4,8 +4,13 @@ svn: Introduction
 Subversion is a centralized version control system developed to address the
 shortcomings of CVS.
 
-svn: Basics
-===========
+svn: Getting help
+=================
+
+- Most commands have built-in documentatino you can access with the
+  ``--help`` option::
+
+    svn checkout --help
 
 svn: Creating a repository
 ==========================
@@ -72,7 +77,7 @@ repository::
 svn: Adding files: import
 =========================
 
-`svn import` imports an entire tree into an existing Subversion
+``svn import`` imports an entire tree into an existing Subversion
 repository::
 
   svn import [PATH] URL
