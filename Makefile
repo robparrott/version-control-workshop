@@ -5,7 +5,16 @@ INKSCAPE	= inkscape
 THEME = seas
 THEME_ARG = --theme-url ui/$(THEME)
 
-RSTDOCS = $(shell ls *.rst)
+RSTDOCS = \
+	git.rst \
+	history_of_vc.rst \
+	intro.rst \
+	seealso.rst \
+	subversion.rst \
+	vc_models.rst \
+	version-control.rst \
+	why_use_vc.rst
+
 HTMLDOCS = version-control.html version-control.s5.html \
 	   subversion-example.html \
 	   README.html
