@@ -15,18 +15,23 @@ Metadata
 
 This presentation is available online:
 
+- http://people.seas.harvard.edu/~lars/workshops/version-control/
+
 Metadata
 ========
 
 The presentation sources are also available online:
 
-- via Git::
-
-    git clone git://git.seas.harvard.edu/lars/version-control-tutorial
-
 - via Subversion::
   
-    svn co http://source.seas.harvard.edu/svn/version-control-tutorial
+    svn co \
+    https://source.seas.harvard.edu/svn/version-control-workshop/trunk \
+    version-control-workshop
+
+- via Git::
+
+    git svn clone -s \
+    https://source.seas.harvard.edu/svn/version-control-workshop
 
 This presentation was produced using reStructuredText_ and s5_.
 
