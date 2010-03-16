@@ -33,6 +33,14 @@ Use ``git init`` to create a git repository in your current directory::
    add``.  This gives you a repository (the ``.git`` directory) and a
    working copy (everything else).
 
+   If you are going to start tracking an existing project with git, you
+   will generally start like this::
+
+     $ git init
+     Initialized empty Git repository in .../.git/
+     $ git add .
+     $ git commit -m 'initial import'
+
    If you are creating a repository that people will be accessing remotely,
    you will normally want to create a "bare" repository, which consists of
    just the contents of the ``.git`` directory and no working copy.  You do
@@ -79,14 +87,6 @@ Use ``git commit`` to commit files to your local repository::
    the command line::
 
      git commit path/to/modified/file
-
-   A common usage of the above commands is to initialize a git repository
-   and then add all of the files in your current directory::
-
-     $ git init
-     Initialized empty Git repository in .../.git/
-     $ git add .
-     $ git commit -m 'initial import'
 
 git: What's changed: status
 ===========================
@@ -231,10 +231,13 @@ Use ``git push`` to send your committed changes to a remote repository::
 git: the index
 ==============
 
-- Git is not really just like Subversion.
+Git is not really just like Subversion (or most other version control
+solutions).
+
 - The *index* is a staging area between your working copy and your local
   repository.
-- ``git add`` adds files to the index; ``git commit`` commits files from the
+- ``git add`` adds files to the index
+- ``git commit`` commits files from the
   index to the repository.
 
 git: the index
@@ -310,6 +313,21 @@ git: Integrating w/ Subversion
 Committing your changes back to the Subversion repository::
 
   git svn dcommit
+
+.. container:: handout
+
+   Before you push your changes to the Subversion repository you need to
+   first commit any pending modifications to your local repository.
+   Otherwise, git will complain::
+
+     $ git svn dcommit
+     Cannot dcommit with a dirty index.  Commit your changes first, or stash them with `git stash'.
+       at /usr/libexec/git-core/git-svn line 491
+
+   To fix this, commit your changes::
+
+     $ git commit -m 'a meaningful commit message' -a
+
 
 git: Integrating w/ CVS
 =======================
