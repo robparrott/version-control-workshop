@@ -117,8 +117,8 @@ repository::
    would still need to issue an ``svn checkout`` to get a working copy of
    the repository.
 
-svn: Commiting changes
-======================
+svn: Committing changes
+=======================
 
 Use ``svn commit`` to send changes back to the repository::
 
@@ -198,7 +198,7 @@ Use ``svn diff`` to display the changes made to your repository::
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.diff.html
 
-   - Without any arguments, display all of the uncomitted changes in your
+   - Without any arguments, display all of the uncommitted changes in your
      working copy.
 
    - Specify *TARGET* to see just the changes in a particular file or

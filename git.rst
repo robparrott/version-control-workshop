@@ -192,7 +192,7 @@ repository::
    your current directory named after the repository, unless you explicitly
    provide a name with the *DIRECTORY* argument.
 
-   This is analagous to Subversions ``checkout`` operation.
+   This is analogous to Subversion's ``checkout`` operation.
 
    You can only clone the top-level repository; unlike Subversion, git does
    not allow you to clone individual subtrees.
