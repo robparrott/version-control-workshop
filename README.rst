@@ -3,6 +3,8 @@ Version control with Subversion and Git
 =======================================
 
 :Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+:Organization: Instructional and Research Computing Services, Harvard
+               School of Engineering and Applied Sciences
 
 This is a basic introduction to version control with Subversion and Git.
 
