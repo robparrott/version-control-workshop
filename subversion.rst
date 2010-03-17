@@ -261,3 +261,37 @@ Use ``svn delete`` to remove files from the repository::
    - If you remove the file manually, you will still need to issue ``svn
      delete`` after the fact to mark the item deleted in the repository.
 
+svn: Tagging and branching
+==========================
+
+- Tags and branches are naming conventions.
+- Use ``svn copy`` to create tags or branches.
+- Space efficient via copy-on-write
+
+.. container:: handout
+
+   The conventional layout of a Subversion repository looks like this::
+
+     /trunk/
+     /tags/
+     /branches/
+
+   You normally work in the ``trunk`` directory.  To create a tag::
+
+     $ svn copy trunk tags/version_1
+     $ svn ci -m 'tagged version 1'
+
+   Or to create a branch::
+
+     $ svn copy trunk branches/version_1_fixes
+     $ svn ci -m 'created branch for version 1 fixes'
+
+   While functionally the same, the convention is that you do not edit
+   things in the ``tags/`` tree, while you *may* change things in the
+   ``branches/`` tree.
+
+   See `choosing a repository layout`_ from the Subversion documentation
+   for more information.
+
+   .. _choosing a repository layout: http://svnbook.red-bean.com/en/1.0/ch05s04.html#svn-ch-5-sect-6.1
+

@@ -244,6 +244,89 @@ Use ``git push`` to send your committed changes to a remote repository::
 
      $ git push origin master
 
+git: Tagging and branching
+==========================
+
+- Git has explicit support for tagging and branching.
+- ``git tag`` manipulates tags
+- ``git branch`` and ``git checkout`` manipulate branches
+
+git: Tags
+=========
+
+Create a tag::
+
+  git tag [-a] TAGNAME
+
+- Creates a "lightweight" tag (an alias for a commit object)
+- Add ``-a`` to create an annotated tag (i.e., with an associated message)
+- Also possible to create cryptographically signed tags
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-tag.html
+
+git: Tags
+=========
+
+List tags::
+
+  git tag
+
+Information about a specific tag::
+
+  git tag -v TAGNAME
+
+git: Branches
+=============
+
+List branches::
+
+  git branch
+
+Create a branch rooted at *START*::
+
+  git branch BRANCHNAME [START]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-branch.html
+
+   If you omit *START*, the branch is rooted at your current HEAD.
+
+git: Branches
+=============
+
+Switch to a branch::
+
+  git checkout BRANCHNAME
+
+Create a branch rooted at *START* and switch to it::
+
+  git checkout -b BRANCHNAME [START]
+
+.. container:: handout
+
+   For example, you want to enhance your code with some awesome
+   experimental code.  You create a new *awesometesting* branch and switch
+   to it::
+
+     $ git checkout -b awesometesting
+
+   You add your awesome code, and when things are working you merge it back
+   into the master branch::
+
+     $ git checkout master
+     $ git merge awesometesting
+     Updating 1288ed3..33e4a4c
+     Fast-forward
+      version-control.rst |    2 ++
+      1 files changed, 2 insertions(+), 0 deletions(-)
+
 git: the index
 ==============
 
