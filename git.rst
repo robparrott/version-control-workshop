@@ -2,7 +2,7 @@ git: Introduction
 =================
 
 Git is a distributed version control system originally developed by Linus
-Torvals as a replacement for BitKeeper.
+Torvalds as a replacement for BitKeeper.
 
 git: Getting help
 =================
@@ -258,7 +258,7 @@ Create a tag::
 
   git tag [-a] TAGNAME
 
-- Creates a "lightweight" tag (an alias for a commit object)
+- Creates a *lightweight* tag (an alias for a commit object)
 - Add ``-a`` to create an annotated tag (i.e., with an associated message)
 - Also possible to create cryptographically signed tags
 

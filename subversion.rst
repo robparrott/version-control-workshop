@@ -7,7 +7,7 @@ shortcomings of CVS.
 svn: Getting help
 =================
 
-- Most commands have built-in documentatino you can access with the
+- Most commands have built-in documentation you can access with the
   ``--help`` option::
 
     svn checkout --help
