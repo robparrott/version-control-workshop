@@ -10,9 +10,11 @@ Vocabulary
 Vocabulary
 ==========
 
+*Revision*
+  The state of the repository at a certain point in time.
+
 *Commit*
-  To save your changes back to the repository.  Also a specific set of
-  changes (in this sense a synonym for *revision*).
+  To save your changes back to the repository.
 
 *Merge*
   To combine two sets of changes to the files in your project.

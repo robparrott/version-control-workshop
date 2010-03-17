@@ -112,6 +112,7 @@ Use ``git status`` to see a list of modified files::
 
    The output of ``git status`` will look something like this::
 
+     $ git status
      # On branch master
      # Changed but not updated:
      #   (use "git add <file>..." to update what will be committed)
@@ -144,6 +145,7 @@ Use ``git diff`` to see pending changes in your working copy::
 
    The output of ``git diff`` is standard diff output, e.g.::
 
+     $ git diff
      diff --git a/version-control.rst b/version-control.rst
      index e518192..b1c519a 100644
      --- a/version-control.rst
@@ -172,9 +174,6 @@ Use ``git diff`` to see pending changes in your working copy::
 
        git diff <commit1> <commit2>
 
-git: Creating a branch
-======================
-
 git: Cloning a remote repository
 ================================
 
@@ -192,6 +191,11 @@ repository::
    ``git clone`` will clone the remote repository to a new directory in
    your current directory named after the repository, unless you explicitly
    provide a name with the *DIRECTORY* argument.
+
+   This is analagous to Subversions ``checkout`` operation.
+
+   You can only clone the top-level repository; unlike Subversion, git does
+   not allow you to clone individual subtrees.
 
 git: Updating your working copy
 ===============================
@@ -267,6 +271,7 @@ git: the index
 Refer back to this illustration if you get confused:
 
 .. image:: images/git-transport.png
+   :height: 300
 
 .. container:: handout
 
@@ -358,6 +363,18 @@ Committing your changes back to the Subversion repository::
      r39 = d1f884a3f945f6083541e28ab7a09ca8efc6343b (refs/remotes/trunk)
      No changes between current HEAD and refs/remotes/trunk
      Resetting to the latest refs/remotes/trunk
+
+git: Integrating w/ Subversion
+==============================
+
+Updating your working copy from the Subversion repository::
+
+  git svn rebase
+
+.. container:: handout
+
+   As with ``git svn dcommit``, you must have a clean working copy before
+   running the ``rebase`` command.
 
 git: Integrating w/ CVS
 =======================

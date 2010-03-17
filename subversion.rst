@@ -74,6 +74,12 @@ repository::
      $ svn checkout \
      https://source.seas.harvard.edu/svn/version-control-workshop
 
+  You can elect to checkout only a particular subtree of a repository.  For
+  example, if you really like the images in this presentation::
+
+     $ svn checkout \
+     https://source.seas.harvard.edu/svn/version-control-workshop/images
+
 svn: Adding files: import
 =========================
 
@@ -124,6 +130,9 @@ Use ``svn commit`` to send changes back to the repository::
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
 
+   Subversion will start an editor allowing you to provide a commit message
+   (you can also provide one with the ``-m`` option).
+
 svn: Adding files: add
 ======================
 
@@ -152,14 +161,36 @@ be added to the repository next time you commit your working copy::
 svn: What's changed: status
 ===========================
 
+Use ``svn status`` lists the state of files in your working copy::
+
+  svn status
+
 .. container:: handout
 
    [documentation__]
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
 
+   The ``svn status`` command shows you what files in your working copy
+   have been changed (added, deleted, renamed, modified).  It will also
+   show you which files are not part of your repository.  For example::
+
+     $ svn status
+     ?       subversion-example.rst
+     M       why_use_vc.rst
+     M       history_of_vc.rst
+     M       subversion.rst
+     A       vocabulary.rst
+
+   This shows that three files have been modified, one has been added, and
+   one is unknown to the version control system.
+
 svn: What's changed: diffs
 ==========================
+
+Use ``svn diff`` to display the changes made to your repository::
+
+  svn diff [-r N[:M]] [TARGET]
 
 .. container:: handout
 
@@ -167,8 +198,38 @@ svn: What's changed: diffs
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.diff.html
 
+   - Without any arguments, display all of the uncomitted changes in your
+     working copy.
+
+   - Specify *TARGET* to see just the changes in a particular file or
+     directory.
+
+   - Use the ``-r`` option to look at the changes between specific
+     revisions.
+
+   For example::
+
+     $ svn diff -r 44:46 README.rst 
+     Index: README.rst
+     ===================================================================
+     --- README.rst	(revision 44)
+     +++ README.rst	(revision 46)
+     @@ -3,6 +3,8 @@
+      =======================================
+      
+      :Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+     +:Organization: Instructional and Research Computing Services, Harvard
+     +               School of Engineering and Applied Sciences
+      
+      This is a basic introduction to version control with Subversion and Git.
+
 svn: Updating your working copy
 ===============================
+
+Use ``svn update`` to update your working copy with changes from the
+repository::
+
+  svn update
 
 .. container:: handout
 
@@ -176,12 +237,27 @@ svn: Updating your working copy
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
 
+   - You can elect to update only a particular subtree of your repository
+     by passing an optional path argument, e.g::
+
+       $ svn update images/
+
 svn: Removing files
 ===================
+
+Use ``svn delete`` to remove files from the repository::
+
+  svn delete PATH [PATH ...]
 
 .. container:: handout
 
    [documentation__]
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.delete.html
+
+   - Removes the file from your working copy and schedules a remove from
+     the repository (next time you commit).
+
+   - If you remove the file manually, you will still need to issue ``svn
+     delete`` after the fact to mark the item deleted in the repository.
 

@@ -52,12 +52,8 @@ History of version control
 The version control explosion.
 
 .. image:: images/kaboom.png
-   :class: center
-   :align: center
+   :align: right
    :width: 600
-
-History of version control
-==========================
 
 - git_
 - Bazaar_
