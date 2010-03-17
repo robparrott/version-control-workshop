@@ -28,12 +28,15 @@ The presentation sources are also available online:
     https://source.seas.harvard.edu/svn/version-control-workshop/trunk \
     version-control-workshop
 
+Metadata
+========
+
+The presentation sources are also available online:
+
 - via Git::
 
     git svn clone -s \
     https://source.seas.harvard.edu/svn/version-control-workshop
-
-This presentation was produced using reStructuredText_ and s5_.
 
 .. _slideshow: version-control.s5.html
 .. _ircs: http://ircs.seas.harvard.edu/
