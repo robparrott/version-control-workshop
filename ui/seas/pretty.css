@@ -108,7 +108,7 @@ tt.docutils {background-color: white;}
 tt.literal {background-color: #d0d0d0; border-bottom: 1px dotted}
 
 pre.literal-block, pre.doctest-block {background-color: #d0d0d0;
-	border: thin solid black; padding: 1ex;}
+	border: thin solid black; padding: 1ex; white-space: pre-wrap;}
 
 div.admonition {background-color: #F3F781; border: thin solid black;
 	font-size: smaller;}
