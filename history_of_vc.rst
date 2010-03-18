@@ -1,7 +1,7 @@
 History of version control
 ==========================
 
-In the beginning, there was RCS_.
+In the beginning (c. 1985), there was RCS_.
 
 - uses locking to manage conflicts.
 
