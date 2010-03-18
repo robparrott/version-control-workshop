@@ -37,7 +37,6 @@ SVGDOCS = $(shell ls images/*.svg)
 # These are things we generate.
 
 HTMLDOCS = version-control.html version-control.s5.html \
-	   subversion-example.html \
 	   README.html
 
 PNGDOCS = $(SVGDOCS:.svg=.png)
@@ -99,8 +98,4 @@ install: all
 
 # Tell Make about the depdencies of the presentation.
 version-control.html version-control.s5.html : $(RSTDOCS)
-
-# Tell make how to generate subversion-example.rst
-subversion-example.rst: examples/subversion/run.sh
-	( cd examples/subversion && sh ./run.sh -nf ) > $@
 
