@@ -1,6 +1,7 @@
 #!/bin/sh
 
 SRC=ftp://ftp.gnu.org/gnu/hello/hello-2.5.tar.gz
+SCRIPT=$(pwd)/sessions/version-control-$(date +%Y%m%dT%H:%M).script
 
 rm -rf work
 mkdir work
@@ -13,12 +14,26 @@ echo "+ Unpacking code."
 tar xzf hello-2.5.tar.gz
 
 echo "+ Setting up repositories."
-svnadmin create repo1
-REPO=file://$(pwd)/repo1
-export REPO
+mkdir repos
+
+svnadmin create repos/sample1
+SAMPLEREPO=file://$(pwd)/repos/sample1
+export SAMPLEREPO
 
 svn mkdir -m 'create repository layout' \
 	$REPO/{trunk,branches,tags}
+
+svnadmin create repos/hello
+HELLOREPO=file://$(pwd)/repos/hello/
+export HELLOREPO
+
+svn mkdir -m 'create repository layout' \
+	$HELLOREPO/{trunk,branches,tags}
+
+svn import -m 'import version 2.5' hello-2.5 $HELLOREPO/trunk
+
+svn co $HELLOREPO/trunk work1
+
 
 PS1="$ "
 export PS1
@@ -28,5 +43,5 @@ EDITOR=vim
 export EDITOR VISUAL
 
 install -d ../sessions
-exec script ../sessions/version-control-$(date +%Y-%m-%dT%H:%M).script bash
+exec script $SCRIPT bash
 
