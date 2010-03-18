@@ -20,12 +20,6 @@ export REPO
 svn mkdir -m 'create repository layout' \
 	$REPO/{trunk,branches,tags}
 
-mkdir hello-2.5.git
-(
-	cd hello-2.5.git
-	git init --bare
-)
-
 PS1="$ "
 export PS1
 
@@ -33,5 +27,6 @@ VISUAL=vim
 EDITOR=vim
 export EDITOR VISUAL
 
-exec script version-control.script bash
+install -d ../sessions
+exec script ../sessions/version-control-$(date +%Y-%m-%dT%H:%M).script bash
 
