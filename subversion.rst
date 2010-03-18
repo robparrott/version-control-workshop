@@ -12,41 +12,6 @@ svn: Getting help
 
     svn checkout --help
 
-svn: Creating a repository
-==========================
-
-Use ``svnadmin create`` to create a new repository::
-
-  svnadmin create REPOS_PATH
-
-Where *REPOS_PATH* is a local filesystem path.
-
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svnadmin.html
-
-   If you will be accessing the repository remotely (or offering remote
-   access to collaborators), you will need to decide what sort of remote
-   access to provide.  Your options are:
-
-   - file:// (local only)
-   - svn:// (subversion's native protocol)
-   - svn+ssh:// (subversion over ssh)
-   - http:// (subversion over webdav)
-
-   The Subversion page on `choosing a server configuration`_ provides more
-   information about the pros and cons of each of these methods.
-
-   .. _choosing a server configuration: http://svnbook.red-bean.com/en/1.5/svn.serverconfig.choosing.html
-
-   E.g::
-   
-     $ svnadmin create ~/repos/hello
-   
-   You could then access this using the URL file://$HOME/repos/hello.
-
 svn: Checking out a remote repository
 =====================================
 
@@ -54,6 +19,8 @@ Use the ``svn checkout`` command to get a working copy of a Subversion
 repository::
 
   svn checkout URL[@REV]... [PATH]
+
+.. comment
 
 .. container:: handout
 
@@ -79,43 +46,6 @@ repository::
 
      $ svn checkout \
      https://source.seas.harvard.edu/svn/version-control-workshop/images
-
-svn: Adding files: import
-=========================
-
-``svn import`` imports an entire tree into an existing Subversion
-repository::
-
-  svn import [PATH] URL
-
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.import.html
-
-   For example, if I wanted to start using Subversion to track changes to
-   the hello project, I might do something like this::
-
-     $ svn import hello-2.5 https://source.seas.harvard.edu/svn/hello/trunk
-
-   And the output would look something like this::
-
-     Adding         gnulib
-     Adding         gnulib/m4
-     Adding         gnulib/m4/lib-link.m4
-     Adding         gnulib/m4/fcntl-o.m4
-     Adding         gnulib/m4/getopt.m4
-     Adding         gnulib/m4/localcharset.m4
-     Adding         gnulib/m4/string_h.m4
-     Adding         gnulib/m4/mbrtowc.m4
-     Adding         gnulib/m4/iconv.m4
-     Adding         gnulib/m4/longlong.m4
-     [...]
-
-   Note that ``svn import`` does not modify your current directory!  You
-   would still need to issue an ``svn checkout`` to get a working copy of
-   the repository.
 
 svn: Committing changes
 =======================
@@ -261,6 +191,30 @@ Use ``svn delete`` to remove files from the repository::
    - If you remove the file manually, you will still need to issue ``svn
      delete`` after the fact to mark the item deleted in the repository.
 
+svn: Conflicts
+==============
+
+A conflict occurrs when two people make overlapping changes.
+
+- Detected when you attempt to update your working copy.
+- You may discard your changes, discard the repository changes, or
+  attempt to correct things manually.
+
+.. container:: handout
+
+   If you attempt to update your working copy and Subversion detecs a
+   conflict, you will get a warning like this::
+
+     $ svn update
+     Conflict discovered in 'README'.
+     Select: (p) postpone, (df) diff-full, (e) edit,
+             (mc) mine-conflict, (tc) theirs-conflict,
+             (s) show all options: df
+
+    Selecting ``mine-conflict`` will discard the repository changes
+    (keeping your local changes), while selecting ``theirs-conflict`` will
+    discard your local changes.
+   
 svn: Tagging and branching
 ==========================
 
@@ -295,3 +249,74 @@ svn: Tagging and branching
 
    .. _choosing a repository layout: http://svnbook.red-bean.com/en/1.0/ch05s04.html#svn-ch-5-sect-6.1
 
+svn: Creating a repository
+==========================
+
+Use ``svnadmin create`` to create a new repository::
+
+  svnadmin create REPOS_PATH
+
+Where *REPOS_PATH* is a local filesystem path.
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svnadmin.html
+
+   If you will be accessing the repository remotely (or offering remote
+   access to collaborators), you will need to decide what sort of remote
+   access to provide.  Your options are:
+
+   - file:// (local only)
+   - svn:// (subversion's native protocol)
+   - svn+ssh:// (subversion over ssh)
+   - http:// (subversion over webdav)
+
+   The Subversion page on `choosing a server configuration`_ provides more
+   information about the pros and cons of each of these methods.
+
+   .. _choosing a server configuration: http://svnbook.red-bean.com/en/1.5/svn.serverconfig.choosing.html
+
+   E.g::
+   
+     $ svnadmin create ~/repos/hello
+   
+   You could then access this using the URL file://$HOME/repos/hello.
+
+svn: Adding files: import
+=========================
+
+``svn import`` imports an entire tree into an existing Subversion
+repository::
+
+  svn import [PATH] URL
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.import.html
+
+   For example, if I wanted to start using Subversion to track changes to
+   the hello project, I might do something like this::
+
+     $ svn import hello-2.5 https://source.seas.harvard.edu/svn/hello/trunk
+
+   And the output would look something like this::
+
+     Adding         gnulib
+     Adding         gnulib/m4
+     Adding         gnulib/m4/lib-link.m4
+     Adding         gnulib/m4/fcntl-o.m4
+     Adding         gnulib/m4/getopt.m4
+     Adding         gnulib/m4/localcharset.m4
+     Adding         gnulib/m4/string_h.m4
+     Adding         gnulib/m4/mbrtowc.m4
+     Adding         gnulib/m4/iconv.m4
+     Adding         gnulib/m4/longlong.m4
+     [...]
+
+   Note that ``svn import`` does not modify your current directory!  You
+   would still need to issue an ``svn checkout`` to get a working copy of
+   the repository.

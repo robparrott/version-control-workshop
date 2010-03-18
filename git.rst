@@ -221,6 +221,48 @@ and merge changes into your working copy::
 
      $ git pull origin master
 
+git: Conflicts
+==============
+
+A conflict occurrs when two people make overlapping changes.
+
+- Detected when you attempt to update your working copy via ``git pull``.
+- You may discard your changes, discard the repository changes, or
+  attempt to correct things manually.
+
+.. container:: handout
+
+   If you attempt to pull in changes that conflict with your working tree,
+   you will see an error similar to the following::
+
+     $ git pull
+     remote: Counting objects: 5, done.
+     remote: Compressing objects: 100% (3/3), done.
+     remote: Total 3 (delta 2), reused 0 (delta 0)
+     Unpacking objects: 100% (3/3), done.
+     From /Users/lars/projects/version-control-workshop/work/repo2
+        4245cb6..84f1112  master     -> origin/master
+     Auto-merging README
+     CONFLICT (content): Merge conflict in README
+     Automatic merge failed; fix conflicts and then commit the result.
+
+   To resolve the conflict manually:
+
+   - Edit the conflicting files as necessary.
+
+   To discard your changes (and accept the remote repository version)::
+
+   - run ``git checkout --theirs README``
+
+   To override the repository with your changes:
+
+   - run ``git checkout --ours README``
+
+   When you complete the above tasks:
+   
+   - add the files with ``git add``
+   - commit the changes with ``git commit``.
+
 git: Pushing changes
 ====================
 
@@ -243,6 +285,22 @@ Use ``git push`` to send your committed changes to a remote repository::
    named *origin*::
 
      $ git push origin master
+
+   Git doesn't like you pushing into a remote repository that is associated
+   with a working tree (because this could cause unexpected changes for
+   the person who checked out that working tree).  You will generally want
+   to create "bare" repositories for remote access (using ``git init
+   --bare``).
+
+   If you attempt to push to a repository that is newer than your working
+   copy you will see an error similar to the following::
+
+     $ git push
+     To dottiness.seas.harvard.edu:repos/myproject
+      ! [rejected]        master -> master (non-fast forward)
+     error: failed to push some refs to 'dottiness.seas.harvard.edu:repos/myproject'
+
+   To fix this, run ``git pull`` and deal with any conflicts.
 
 git: Tagging and branching
 ==========================
