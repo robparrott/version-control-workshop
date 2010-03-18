@@ -191,6 +191,8 @@ Use ``svn delete`` to remove files from the repository::
    - If you remove the file manually, you will still need to issue ``svn
      delete`` after the fact to mark the item deleted in the repository.
 
+   - AKA ``svn rm``.
+
 svn: Conflicts
 ==============
 
