@@ -97,6 +97,32 @@ Use ``git commit`` to commit files to your local repository::
 
      git commit path/to/modified/file
 
+git: Renaming files
+===================
+
+Use ``git mv`` to rename files in the repository::
+
+  git mv SRC DST
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-mv.html
+
+git: Removing files
+===================
+
+Use ``git rm`` to remove files from the repository::
+
+  git rm PATH [...]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-rm.html
+
 git: What's changed: status
 ===========================
 
@@ -221,6 +247,45 @@ and merge changes into your working copy::
 
      $ git pull origin master
 
+git: Pushing changes
+====================
+
+Use ``git push`` to send your committed changes to a remote repository::
+
+  git push [REPOSITORY [REFSPEC]]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-push.html
+
+   ``git push`` by itself will push your changes to the remote repository
+   defined by the ``branch.master.remote`` config option (which will
+   typically be the repository from which you originally cloned your
+   working copy).  If there are multiple remote repositories associated
+   with your working copy, you can specify a repository (and branch) on the
+   command line, e.g, to push your changes to branch *master* at a remote
+   named *origin*::
+
+     $ git push origin master
+
+   Git doesn't like you pushing into a remote repository that is associated
+   with a working tree (because this could cause unexpected changes for
+   the person who checked out that working tree).  You will generally want
+   to create "bare" repositories for remote access (using ``git init
+   --bare``).
+
+   If you attempt to push to a repository that is newer than your working
+   copy you will see an error similar to the following::
+
+     $ git push
+     To dottiness.seas.harvard.edu:repos/myproject
+      ! [rejected]        master -> master (non-fast forward)
+     error: failed to push some refs to 'dottiness.seas.harvard.edu:repos/myproject'
+
+   To fix this, run ``git pull`` and deal with any conflicts.
+
 git: Conflicts
 ==============
 
@@ -263,44 +328,46 @@ A conflict occurrs when two people make overlapping changes.
    - add the files with ``git add``
    - commit the changes with ``git commit``.
 
-git: Pushing changes
+git: Viewing history
 ====================
 
-Use ``git push`` to send your committed changes to a remote repository::
+The ``git log`` command shows you the history of your repository::
 
-  git push [REPOSITORY [REFSPEC]]
+  git log [PATH]
 
 .. container:: handout
 
    [documentation__]
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-push.html
+   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-log.html
 
-   ``git push`` by itself will push your changes to the remote repository
-   defined by the ``branch.master.remote`` config option (which will
-   typically be the repository from which you originally cloned your
-   working copy).  If there are multiple remote repositories associated
-   with your working copy, you can specify a repository (and branch) on the
-   command line, e.g, to push your changes to branch *master* at a remote
-   named *origin*::
+   ``git log`` with no arguments shows you the commit messages for each
+   revision in your repository::
 
-     $ git push origin master
-
-   Git doesn't like you pushing into a remote repository that is associated
-   with a working tree (because this could cause unexpected changes for
-   the person who checked out that working tree).  You will generally want
-   to create "bare" repositories for remote access (using ``git init
-   --bare``).
-
-   If you attempt to push to a repository that is newer than your working
-   copy you will see an error similar to the following::
-
-     $ git push
-     To dottiness.seas.harvard.edu:repos/myproject
-      ! [rejected]        master -> master (non-fast forward)
-     error: failed to push some refs to 'dottiness.seas.harvard.edu:repos/myproject'
-
-   To fix this, run ``git pull`` and deal with any conflicts.
+     $ git log
+     commit 7c8c3e71893d7481fdd9c13ec8f53cb9c61fac50
+     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+     Date:   Thu Mar 18 12:46:46 2010 -0400
+     
+         changed GNU to Microsoft
+     
+     commit 257f2f3ff44c2165c1182d3673a825fcadf121aa
+     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+     Date:   Thu Mar 18 12:46:46 2010 -0400
+     
+         made a change
+     
+     commit 99c4fb8f37e48284d79c7396aaf755b514d6a249
+     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+     Date:   Thu Mar 18 12:46:45 2010 -0400
+     
+         made some changes
+     
+     commit 20cc63576f7c88541f5b9471e20f4d1c5f8afcb9
+     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+     Date:   Thu Mar 18 12:46:45 2010 -0400
+     
+         initial import
 
 git: Tagging and branching
 ==========================
@@ -370,16 +437,20 @@ Create a branch rooted at *START* and switch to it::
 .. container:: handout
 
    For example, you want to enhance your code with some awesome
-   experimental code.  You create a new *awesometesting* branch and switch
+   experimental code.  You create a new *seas-workshop-dev* branch and switch
    to it::
 
-     $ git checkout -b awesometesting
+     $ git checkout -b seas-workshop-dev
 
-   You add your awesome code, and when things are working you merge it back
-   into the master branch::
+   You make some changes, and when things are working you commit your
+   branch::
+
+     $ git commit -m 'made some awesome changes' -a
+
+   And then merge it into the master branch::
 
      $ git checkout master
-     $ git merge awesometesting
+     $ git merge seas-workshop-dev
      Updating 1288ed3..33e4a4c
      Fast-forward
       version-control.rst |    2 ++

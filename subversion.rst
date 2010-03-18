@@ -47,24 +47,8 @@ repository::
      $ svn checkout \
      https://source.seas.harvard.edu/svn/version-control-workshop/images
 
-svn: Committing changes
-=======================
-
-Use ``svn commit`` to send changes back to the repository::
-
-  svn commit [PATH ...]
-
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
-
-   Subversion will start an editor allowing you to provide a commit message
-   (you can also provide one with the ``-m`` option).
-
-svn: Adding files: add
-======================
+svn: Adding files
+=================
 
 `svn add` schedules individual files or directories in your working copy to
 be added to the repository next time you commit your working copy::
@@ -87,6 +71,40 @@ be added to the repository next time you commit your working copy::
      Adding         hello.spec
      Transmitting file data .
      Committed revision 2.
+
+svn: Renaming files
+===================
+
+Use ``svn rename`` to rename files in the repository::
+
+  svn rename SRC [...] DST
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.rename.html
+
+svn: Removing files
+===================
+
+Use ``svn delete`` to remove files from the repository::
+
+  svn delete PATH [PATH ...]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.delete.html
+
+   - Removes the file from your working copy and schedules a remove from
+     the repository (next time you commit).
+
+   - If you remove the file manually, you will still need to issue ``svn
+     delete`` after the fact to mark the item deleted in the repository.
+
+   - AKA ``svn rm``.
 
 svn: What's changed: status
 ===========================
@@ -153,6 +171,22 @@ Use ``svn diff`` to display the changes made to your repository::
       
       This is a basic introduction to version control with Subversion and Git.
 
+svn: Committing changes
+=======================
+
+Use ``svn commit`` to send changes back to the repository::
+
+  svn commit [PATH ...]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
+
+   Subversion will start an editor allowing you to provide a commit message
+   (you can also provide one with the ``-m`` option).
+
 svn: Updating your working copy
 ===============================
 
@@ -171,27 +205,6 @@ repository::
      by passing an optional path argument, e.g::
 
        $ svn update images/
-
-svn: Removing files
-===================
-
-Use ``svn delete`` to remove files from the repository::
-
-  svn delete PATH [PATH ...]
-
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.delete.html
-
-   - Removes the file from your working copy and schedules a remove from
-     the repository (next time you commit).
-
-   - If you remove the file manually, you will still need to issue ``svn
-     delete`` after the fact to mark the item deleted in the repository.
-
-   - AKA ``svn rm``.
 
 svn: Conflicts
 ==============
@@ -216,7 +229,42 @@ A conflict occurrs when two people make overlapping changes.
     Selecting ``mine-conflict`` will discard the repository changes
     (keeping your local changes), while selecting ``theirs-conflict`` will
     discard your local changes.
-   
+
+svn: Viewing history
+====================
+
+The ``svn log`` command shows you the history of your repository::
+
+  svn log [PATH]
+
+.. container:: handout
+
+   [documentation__]
+
+   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
+
+   ``svn log`` with no arguments will show you the commit messages for each
+   revision in your repository::
+
+     $ svn log
+     ------------------------------------------------------------------------
+     r4 | lars | 2010-03-18 12:46:35 -0400 (Thu, 18 Mar 2010) | 1 line
+     
+     changed GNU to Microsoft
+     ------------------------------------------------------------------------
+     r3 | lars | 2010-03-18 12:46:33 -0400 (Thu, 18 Mar 2010) | 1 line
+     
+     made some very important changes
+     ------------------------------------------------------------------------
+     r2 | lars | 2010-03-18 12:46:28 -0400 (Thu, 18 Mar 2010) | 1 line
+     
+     import version 2.5
+     ------------------------------------------------------------------------
+     r1 | lars | 2010-03-18 12:46:27 -0400 (Thu, 18 Mar 2010) | 1 line
+     
+     create repository layout
+     ------------------------------------------------------------------------
+
 svn: Tagging and branching
 ==========================
 
@@ -286,8 +334,8 @@ Where *REPOS_PATH* is a local filesystem path.
    
    You could then access this using the URL file://$HOME/repos/hello.
 
-svn: Adding files: import
-=========================
+svn: Importing files
+====================
 
 ``svn import`` imports an entire tree into an existing Subversion
 repository::
@@ -322,3 +370,4 @@ repository::
    Note that ``svn import`` does not modify your current directory!  You
    would still need to issue an ``svn checkout`` to get a working copy of
    the repository.
+
