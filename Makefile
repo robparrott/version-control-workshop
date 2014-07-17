@@ -7,13 +7,14 @@
 # There are here so that we can override them on the commandline if 
 # necessary (e.g., on OS X, where Inkscape might be 
 # /Applications/Inkscape.app/MacOS/Resources/bin/inkscape or something).
-RST2HTML	= rst2html
-RST2S5		= rst2s5
+RST2HTML	= rst2html.py 
+RST2S5		= rst2slides
 INKSCAPE	= inkscape
 
 # S5 CONFIGURATION
 THEME = seas
-THEME_ARG = --theme-url ui/$(THEME)
+#THEME_ARG = --theme-url ui/$(THEME)
+#THEME_ARG = --stylesheet-dirs=ui/$(THEME)
 
 # SOURCE FILES
 #
@@ -36,8 +37,7 @@ SVGDOCS = $(shell ls images/*.svg)
 # 
 # These are things we generate.
 
-HTMLDOCS = version-control.html version-control.s5.html \
-	   README.html
+HTMLDOCS = index.html slides.html README.html
 
 PNGDOCS = $(SVGDOCS:.svg=.png)
 
@@ -64,7 +64,8 @@ STATIC = \
 DESTDIR = $(HOME)/public_html/version-control-workshop
 
 # A list of all generated documents (so we can remove them).
-GENERATED = $(HTMLDOCS) $(PNGDOCS)
+#GENERATED = $(HTMLDOCS) $(PNGDOCS)
+GENERATED = $(HTMLDOCS) 
 
 # PATTERN RULES
 #
@@ -87,7 +88,7 @@ clean:
 	rm -f $(GENERATED)
 
 view: all
-	firefox version-control.html
+	firefox index.html
 
 # The ``install`` target copies the final content to $(DESTDIR).  If
 # a script named ``deploy`` exists in the current directory, it will be
@@ -97,5 +98,5 @@ install: all
 	test -x deploy && ./deploy $(DESTDIR) || exit 0
 
 # Tell Make about the depdencies of the presentation.
-version-control.html version-control.s5.html : $(RSTDOCS)
+index.html slides.html : $(RSTDOCS)
 
