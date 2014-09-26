@@ -18,8 +18,6 @@ Version control is like having infinite undo.
      your code in order to fix a problem without losing all of your
      intervening work.
 
-Why version control?
-====================
 
 Isolation.
 ----------
@@ -33,8 +31,6 @@ Version control makes it easy to experiment with your code.
      You can merge your changes into another branch or discard them when
      you have finished experimenting.
 
-Why version control?
-====================
 
 Collaboration.
 --------------
