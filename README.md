@@ -6,7 +6,7 @@ An Introduction to Version Control
 * Author: Robert Parrott <robparrott@gmail.com>
 
 
-h2. Contents:
+## Contents:
 
 * [Introduction](docs/intro.md)
 
