@@ -10,77 +10,47 @@ Centralized version control
 
 Developers check out working copies.
 
-.. image:: images/central-1.png
-   :align: center
-   :width: 300
+![central-1.png](../images/central-1.png)  
 
-Centralized version control
-===========================
 
 Someone commits bad code to repository.
 
-.. image:: images/central-2.png
-   :align: center
-   :width: 300
+![central-2.png](../images/central-2.png)  
 
-Centralized version control
-===========================
 
 Changes are visible to everyone.
 
-.. image:: images/central-3.png
-   :align: center
-   :width: 300
+![central3.png](../images/central-3.png)  
 
 Distributed version control
 ===========================
 
 Most recent version control systems use a distributed model.
 
-Distributed version control
-===========================
-
 Developers check out working copies.
 
-.. image:: images/central-1.png
-   :align: center
-   :width: 300
+![central1.png](../images/central-1.png)  
 
 Distributed version control
 ===========================
 
 Someone commits bad code to local repository.
 
-.. image:: images/dvcs-2.png
-   :align: center
-   :width: 300
-
-Distributed version control
-===========================
+![dvcs-2.png](../images/dvcs-2.png)  
 
 Fixes locally and pushes to remote repository.
 
-.. image:: images/dvcs-3.png
-   :align: center
-   :width: 300
+![dvcs-3.png](../images/dvcs-3.png)  
 
-Distributed version control
-===========================
 
 Everyone is happy.
 
-.. image:: images/dvcs-4.png
-   :align: center
-   :width: 300
+![dvcs-4.png](../images/dvcs-4.png)  
 
-Distributed version control
-===========================
 
 There is no spoon.
 
-.. image:: images/nospoon.png
-   :align: center
-   :width: 600
+![nospoon.png](../images/nospoon.png)  
 
 .. container:: handout
 
@@ -104,8 +74,6 @@ generally better than centralized version control.
 
 - I am.
 - There are other opinions.
-
-.. container:: handout
 
    In particular, some of the developers of Subversion have suggested that
    a distributed model makes it less likely that people will share code
