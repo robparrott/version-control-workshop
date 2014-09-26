@@ -49,11 +49,9 @@ svn: Adding files
 `svn add` schedules individual files or directories in your working copy to
 be added to the repository next time you commit your working copy::
 
-  svn add PATH [PATH ...]
-
-.. container:: handout
-
-   [documentation__]
+```  
+svn add PATH [PATH ...]
+```
 
    .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.add.html
 
@@ -75,11 +73,7 @@ Use ``svn rename`` to rename files in the repository::
 
   svn rename SRC [...] DST
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.rename.html
+-  http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.rename.html
 
 svn: Removing files
 ===================
@@ -88,11 +82,7 @@ Use ``svn delete`` to remove files from the repository::
 
   svn delete PATH [PATH ...]
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.delete.html
+-  http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.delete.html
 
    - Removes the file from your working copy and schedules a remove from
      the repository (next time you commit).
@@ -185,13 +175,11 @@ svn: Updating your working copy
 Use ``svn update`` to update your working copy with changes from the
 repository::
 
-  svn update
+```
+svn update
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
+-  http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
 
    - You can elect to update only a particular subtree of your repository
      by passing an optional path argument, e.g::
@@ -207,7 +195,7 @@ A conflict occurrs when two people make overlapping changes.
 - You may discard your changes, discard the repository changes, or
   attempt to correct things manually.
 
-.. container:: handout
+
 
    If you attempt to update your working copy and Subversion detecs a
    conflict, you will get a warning like this::
@@ -227,13 +215,11 @@ svn: Viewing history
 
 The ``svn log`` command shows you the history of your repository::
 
-  svn log [PATH]
+```
+svn log [PATH]
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
+- http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.update.html
 
    ``svn log`` with no arguments will show you the commit messages for each
    revision in your repository::
