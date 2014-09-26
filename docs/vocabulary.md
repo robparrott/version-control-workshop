@@ -1,7 +1,7 @@
 Vocabulary
 ==========
 
-*Repository*
+_Repository_
 
 >  A database containing the files and change history of your project.
 
