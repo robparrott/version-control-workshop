@@ -9,20 +9,20 @@ _Repository_
 >  A local copy of files from a repository.
 
 
-- *Revision*
+*Revision*
 >  The state of the repository at a certain point in time.
 
-- *Commit*
+*Commit*
 >  To save your changes back to the repository.
 
-- *Merge*
+*Merge*
 >  To combine two sets of changes to the files in your project.
 
 
-- *Tag*
+*Tag*
 >  Identifies a point-in-time snapshot of your project.
 
-- *Branch*
+*Branch*
 >  An isolated stream of changes to your project.
 
 
