@@ -25,5 +25,4 @@ _Repository_
 *Branch*
 >  An isolated stream of changes to your project.
 
-
-             ![branchestags.png](../images/branchestags.png)                  
+![branchestags.png](../images/branchestags.png)                  
