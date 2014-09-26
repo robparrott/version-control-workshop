@@ -169,40 +169,35 @@ git diff
 
 The output of ``git diff`` is standard diff output, e.g.::
 ```
-     $ git diff
-     diff --git a/version-control.rst b/version-control.rst
-     index e518192..b1c519a 100644
-     --- a/version-control.rst
-     +++ b/version-control.rst
-     @@ -243,6 +243,34 @@ commit`` to commit them to the (local) repository::
-      Using git: What's changed?
-      ==========================
-      
-     +Use ``git status`` to see a list of modified files::
-     +
-     +  git status
-     +
-     +.. container:: handout
-     +
-     +   The output will look something like this::
-     +
+$ git diff
+diff --git a/version-control.rst b/version-control.rst
+index e518192..b1c519a 100644
+--- a/version-control.rst
++++ b/version-control.rst
+@@ -243,6 +243,34 @@ commit`` to commit them to the (local) repository::
 ```
+
+## Using git: What's changed?
+      
+Use ``git status`` to see a list of modified files::
+```
+git status
+```
+
 You can also use ``git diff`` to see the changes between arbitrary revisions of your project:
 
-   - Changes in working copy vs. previous commit:
+- Changes in working copy vs. previous commit: `git diff <commit>`
 
-       `git diff <commit>`
-
-   - Changes between two previous commits:
-
-       `git diff <commit1> <commit2>`
+- Changes between two previous commits: `git diff <commit1> <commit2>`
 
 ## git: Cloning a remote repository
 
 Use the ``git clone`` command to check out a working copy of a remote
 repository::
 
-  git clone REPOSITORY [DIRECTORY]
+```
+git clone REPOSITORY [DIRECTORY]
+```
 
 * http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-clone.html
 
@@ -222,15 +217,11 @@ git pull [REPOSITORY [REFSPEC]]
 
 * http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-pull.html
 
-   ``git pull`` by itself will pull changes from the remote repository
-   defined by the ``branch.master.remote`` config option (which will
-   typically be the repository from which you originally cloned your
-   working copy).  If there are multiple remote repositories associated
-   with your working copy, you can specify a repository (and branch) on the
-   command line, e.g, to pull changes from the branch *master* at a remote
-   named *origin*::
+``git pull`` by itself will pull changes from the remote repository defined by the ``branch.master.remote`` config option (which will typically be the repository from which you originally cloned your working copy).  If there are multiple remote repositories associated with your working copy, you can specify a repository (and branch) on the command line, e.g, to pull changes from the branch *master* at a remote named *origin*:
 
-     $ git pull origin master
+```
+$ git pull origin master
+```
 
 # git: Pushing changes
 
@@ -243,26 +234,25 @@ git push [REPOSITORY [REFSPEC]]
 
 * http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-push.html
 
-   ``git push`` by itself will push your changes to the remote repository
-   defined by the ``branch.master.remote`` config option (which will
-   typically be the repository from which you originally cloned your
-   working copy).  If there are multiple remote repositories associated
-   with your working copy, you can specify a repository (and branch) on the
-   command line, e.g, to push your changes to branch *master* at a remote
-   named *origin*::
+``git push`` by itself will push your changes to the remote repository
+defined by the ``branch.master.remote`` config option (which will
+typically be the repository from which you originally cloned your
+working copy).  If there are multiple remote repositories associated
+with your working copy, you can specify a repository (and branch) on the
+command line, e.g, to push your changes to branch *master* at a remote
+named *origin*:
 
 ```
 $ git push origin master
 ```
 
-   Git doesn't like you pushing into a remote repository that is associated
-   with a working tree (because this could cause unexpected changes for
-   the person who checked out that working tree).  You will generally want
-   to create "bare" repositories for remote access (using ``git init
-   --bare``).
+Git doesn't like you pushing into a remote repository that is associated
+with a working tree (because this could cause unexpected changes for
+the person who checked out that working tree).  You will generally want
+to create "bare" repositories for remote access (using ``git init --bare``).
 
-   If you attempt to push to a repository that is newer than your working
-   copy you will see an error similar to the following::
+If you attempt to push to a repository that is newer than your working
+copy you will see an error similar to the following:
 
 ```
 $ git push
@@ -274,45 +264,42 @@ error: failed to push some refs to 'dottiness.seas.harvard.edu:repos/myproject'
 
 ## git: Conflicts
 
-
 A conflict occurrs when two people make overlapping changes.
 
 - Detected when you attempt to update your working copy via ``git pull``.
-- You may discard your changes, discard the repository changes, or
-  attempt to correct things manually.
-
+- You may discard your changes, discard the repository changes, or attempt to correct things manually.
 
 If you attempt to pull in changes that conflict with your working tree, you will see an error similar to the following:
 
 ```
-     $ git pull
-     remote: Counting objects: 5, done.
-     remote: Compressing objects: 100% (3/3), done.
-     remote: Total 3 (delta 2), reused 0 (delta 0)
-     Unpacking objects: 100% (3/3), done.
-     From /Users/lars/projects/version-control-workshop/work/repo2
-        4245cb6..84f1112  master     -> origin/master
-     Auto-merging README
-     CONFLICT (content): Merge conflict in README
-     Automatic merge failed; fix conflicts and then commit the result.
+$ git pull
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From /Users/lars/projects/version-control-workshop/work/repo2
+   4245cb6..84f1112  master     -> origin/master
+Auto-merging README
+CONFLICT (content): Merge conflict in README
+Automatic merge failed; fix conflicts and then commit the result.
 ```
    
 To resolve the conflict manually:
 
 - Edit the conflicting files as necessary.
 
-   To discard your changes (and accept the remote repository version)::
+To discard your changes (and accept the remote repository version)::
 
-   - run ``git checkout --theirs README``
+- run ``git checkout --theirs README``
 
-   To override the repository with your changes:
+To override the repository with your changes:
 
-   - run ``git checkout --ours README``
+- run ``git checkout --ours README``
 
-   When you complete the above tasks:
-   
-   - add the files with ``git add``
-   - commit the changes with ``git commit``.
+When you complete the above tasks:
+ 
+- add the files with ``git add``
+- commit the changes with ``git commit``.
 
 ## git: Viewing history
 
