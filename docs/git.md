@@ -445,8 +445,7 @@ solutions).
 - ``git commit`` commits files from the
   index to the repository.
 
-git: the index
-==============
+## git: the index
 
 - ``git diff`` is the difference between your working copy and the index.
 - ``git diff HEAD`` is the difference between your working copy and the
@@ -454,20 +453,15 @@ git: the index
 - ``git diff --cached`` is the difference between the index and the local
   repository.
 
-git: the index
-==============
+## git: the index
 
 Refer back to this illustration if you get confused:
 
-.. image:: images/git-transport.png
-   :height: 300
+![git-transport.png](../images/git-transport.png)  
+(This image used with permission.)
 
-.. container:: handout
+## git: Plays well with others
 
-   (This image used with permission.)
-
-git: Plays well with others
-===========================
 
 Git can integrate with other version control systems.
 
@@ -510,45 +504,47 @@ git svn clone [ -s ] REPO_URL
           is generally not recommended because history will be skipped and
           lost.
 
+
 ## git: Integrating w/ Subversion
 
 
 Committing your changes back to the Subversion repository::
 
-  git svn dcommit
+```
+git svn dcommit
+```
 
-.. container:: handout
+Before you push your changes to the Subversion repository you need to first commit any pending modifications to your local repository. Otherwise, git will complain::
 
-   Before you push your changes to the Subversion repository you need to
-   first commit any pending modifications to your local repository.
-   Otherwise, git will complain::
+```
+$ git svn dcommit
+Cannot dcommit with a dirty index.  Commit your changes first, or stash them with `git stash'.
+ at /usr/libexec/git-core/git-svn line 491
 
-     $ git svn dcommit
-     Cannot dcommit with a dirty index.  Commit your changes first, or stash them with `git stash'.
-       at /usr/libexec/git-core/git-svn line 491
+ To fix this, commit your changes::
 
-   To fix this, commit your changes::
+$ git commit -m 'a meaningful commit message' -a
+```
 
-     $ git commit -m 'a meaningful commit message' -a
+And then send your changes to the Subversion repository::
 
-   And then send your changes to the Subversion repository::
- ```
-     $ git svn dcommit
-     Committing to https://source.seas.harvard.edu/svn/version-control-workshop/trunk ...
-       M    seealso.rst
-     Committed r38
-       M    seealso.rst
-     r38 = 03254f2c0b3d5e068a87566caef84454558b85b0 (refs/remotes/trunk)
-     No changes between current HEAD and refs/remotes/trunk
-     Resetting to the latest refs/remotes/trunk
-     Unstaged changes after reset:
-     M  git.rst
+```
+$ git svn dcommit
+Committing to https://source.seas.harvard.edu/svn/version-control-workshop/trunk ...
+ M    seealso.rst
+Committed r38
+ M    seealso.rst
+r38 = 03254f2c0b3d5e068a87566caef84454558b85b0 (refs/remotes/trunk)
+No changes between current HEAD and refs/remotes/trunk
+Resetting to the latest refs/remotes/trunk
+Unstaged changes after reset:
+ M  git.rst
+ M    git.rst
+Committed r39
        M    git.rst
-     Committed r39
-       M    git.rst
-     r39 = d1f884a3f945f6083541e28ab7a09ca8efc6343b (refs/remotes/trunk)
-     No changes between current HEAD and refs/remotes/trunk
-     Resetting to the latest refs/remotes/trunk
+r39 = d1f884a3f945f6083541e28ab7a09ca8efc6343b (refs/remotes/trunk)
+No changes between current HEAD and refs/remotes/trunk
+Resetting to the latest refs/remotes/trunk
 ```
 
 ## git: Integrating w/ Subversion
@@ -577,9 +573,9 @@ into changesets.
 This may take a while::
 
 ```
-  export CVSHOME=:pserver:anonymous@example.com
-  cvs login
-  git cvsimport -o cvs_head -C my-project
+export CVSHOME=:pserver:anonymous@example.com
+cvs login
+git cvsimport -o cvs_head -C my-project
 ```
 
 ## git: Frontends
