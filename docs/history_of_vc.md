@@ -1,7 +1,7 @@
 History of version control
 ==========================
 
-In the beginning (c. 1985), there was RCS_.
+In the beginning (c. 1985), there was RCS.
 
 - uses locking to manage conflicts.
 
@@ -11,8 +11,7 @@ But...
 - everyone worked in the same place.
 - locks were inconvenient.
 
-History of version control
-==========================
+----
 
 RCS begat CVS_.
 
@@ -24,8 +23,7 @@ But...
 - operations were not atomic
 - no support for renaming files/directories
 
-History of version control
-==========================
+----
 
 CVS begat Subversion_.
 
@@ -46,8 +44,7 @@ CVS begat Subversion_.
      system from scratch, retaining the basic ideas of CVS, but without the
      bugs and misfeatures.
 
-History of version control
-==========================
+----
 
 The version control explosion.
 
