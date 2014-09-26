@@ -8,7 +8,6 @@ An Introduction to Version Control
 
 ## Contents:
 
-* [Introduction](docs/intro.md)
 * [Why Use Version Control](docs/why_use_vc.md)
 * [Vocabulary](docs/vocabulary.md)
 * [History of Version Control](docs/history_of_vc.md)
