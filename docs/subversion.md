@@ -22,13 +22,7 @@ repository::
 svn checkout URL[@REV]... [PATH]
 ```
 
-.. comment
-
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.checkout.html
+- http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.checkout.html
 
    *URL* is often an ``http://`` URL, but may also be ``svn+ssh://`` for
    access over ssh, or ``file://`` for access to a repository on the local
