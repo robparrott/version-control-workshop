@@ -506,21 +506,18 @@ Git can integrate with other version control systems.
 
 - Can import a CVS repository.
 
-git: Integrating w/ Subversion
-==============================
+## git: Integrating w/ Subversion
 
-You can use git as your Subversion client.  This gives you many of the
-benefits of a DVCS while still interacting with a Subversion
-repository.
+You can use git as your Subversion client.  This gives you many of the benefits of a DVCS while still interacting with a Subversion repository.
 
-git: Integrating w/ Subversion
-==============================
+## git: Integrating w/ Subversion
 
 Cloning a remote repository::
 
-  git svn clone [ -s ] REPO_URL
+```
+git svn clone [ -s ] REPO_URL
+```
 
-.. container:: handout
 
    The ``-s`` flag informs git that your Subversion repository uses the
    recommended repository layout (i.e., that the top level of your
@@ -543,8 +540,8 @@ Cloning a remote repository::
           is generally not recommended because history will be skipped and
           lost.
 
-git: Integrating w/ Subversion
-==============================
+## git: Integrating w/ Subversion
+
 
 Committing your changes back to the Subversion repository::
 
@@ -565,7 +562,7 @@ Committing your changes back to the Subversion repository::
      $ git commit -m 'a meaningful commit message' -a
 
    And then send your changes to the Subversion repository::
- 
+ ```
      $ git svn dcommit
      Committing to https://source.seas.harvard.edu/svn/version-control-workshop/trunk ...
        M    seealso.rst
@@ -582,46 +579,44 @@ Committing your changes back to the Subversion repository::
      r39 = d1f884a3f945f6083541e28ab7a09ca8efc6343b (refs/remotes/trunk)
      No changes between current HEAD and refs/remotes/trunk
      Resetting to the latest refs/remotes/trunk
+```
 
-git: Integrating w/ Subversion
-==============================
+## git: Integrating w/ Subversion
 
 Updating your working copy from the Subversion repository::
 
-  git svn rebase
-
-.. container:: handout
+```
+git svn rebase
+```
 
    As with ``git svn dcommit``, you must have a clean working copy before
    running the ``rebase`` command.
 
-git: Integrating w/ CVS
-=======================
+## git: Integrating w/ CVS
 
-You can import a CVS repository into git (this is a one-time, one-way
-operation).
+You can import a CVS repository into git (this is a one-time, one-way operation).
 
-.. container:: handout
 
-   The CVS import feature requires cvsps_, a tool for collating CVS changes
-   into changesets.
+The CVS import feature requires cvsps_, a tool for collating CVS changes
+into changesets.
  
-   .. _cvsps: http://www.cobite.com/cvsps/
+* [cvsps](http://www.cobite.com/cvsps/)
 
-git: Integrating w/ CVS
-=======================
+## git: Integrating w/ CVS
 
 This may take a while::
 
+```
   export CVSHOME=:pserver:anonymous@example.com
   cvs login
   git cvsimport -o cvs_head -C my-project
+```
 
-git: Frontends
-==============
+## git: Frontends
 
-The `git wiki`_ has a `list of frontends`_ for git.
 
-.. _git wiki: http://git.wiki.kernel.org/index.php/Main_Page
-.. _list of frontends: http://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces
+The `git wiki` has a `list of frontends` for git.
+
+* [git wiki](http://git.wiki.kernel.org/index.php/Main_Page)
+* [list of frontends](http://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces)
 
