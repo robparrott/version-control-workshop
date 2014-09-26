@@ -1,24 +1,26 @@
-svn: Introduction
+`svn`: Introduction
 =================
 
 Subversion is a centralized version control system developed to address the
 shortcomings of CVS.
 
-svn: Getting help
+`svn`: Getting help
 =================
 
 - Most commands have built-in documentation you can access with the
-  ``--help`` option::
+  `--help` option::
 
     svn checkout --help
 
-svn: Checking out a remote repository
+`svn`: Checking out a remote repository
 =====================================
 
-Use the ``svn checkout`` command to get a working copy of a Subversion
+Use the `svn checkout` command to get a working copy of a Subversion
 repository::
 
-  svn checkout URL[@REV]... [PATH]
+```
+svn checkout URL[@REV]... [PATH]
+```
 
 .. comment
 
@@ -106,18 +108,16 @@ Use ``svn delete`` to remove files from the repository::
 
    - AKA ``svn rm``.
 
-svn: What's changed: status
+`svn`: What's changed: status
 ===========================
 
-Use ``svn status`` lists the state of files in your working copy::
+Use `svn status` lists the state of files in your working copy::
 
-  svn status
+```
+svn status
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
+- http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.commit.html
 
    The ``svn status`` command shows you what files in your working copy
    have been changed (added, deleted, renamed, modified).  It will also
@@ -133,18 +133,16 @@ Use ``svn status`` lists the state of files in your working copy::
    This shows that three files have been modified, one has been added, and
    one is unknown to the version control system.
 
-svn: What's changed: diffs
+`svn`: What's changed: diffs
 ==========================
 
-Use ``svn diff`` to display the changes made to your repository::
+Use `svn diff` to display the changes made to your repository::
 
-  svn diff [-r N[:M]] [TARGET]
+```
+svn diff [-r N[:M]] [TARGET]
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.diff.html
+- http://svnbook.red-bean.com/en/1.5/svn.ref.svn.c.diff.html
 
    - Without any arguments, display all of the uncommitted changes in your
      working copy.
