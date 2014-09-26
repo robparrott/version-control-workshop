@@ -80,7 +80,6 @@ documentation for more information.
 
 ## git: Committing changes
 
-
 Use ``git commit`` to commit files to your local repository::
 
 ```  
@@ -109,16 +108,14 @@ git commit path/to/modified/file
 
 Use ``git mv`` to rename files in the repository::
 
-  git mv SRC DST
+```
+git mv SRC DST
+```
 
-.. container:: handout
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-mv.html
 
-   [documentation__]
+## git: Removing files
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-mv.html
-
-git: Removing files
-===================
 
 Use ``git rm`` to remove files from the repository::
 
@@ -128,56 +125,50 @@ Use ``git rm`` to remove files from the repository::
 
    [documentation__]
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-rm.html
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-rm.html
 
-git: What's changed: status
-===========================
+## git: What's changed: status
+
 
 Use ``git status`` to see a list of modified files::
 
-  git status
+```
+git status
+```
 
-.. container:: handout
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-status.html
 
-   [documentation__]
+The output of ``git status`` will look something like this::
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-status.html
+```
+$ git status
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#  modified:   version-control.rst
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#  examples/
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+The files listed as "changed but not updated" are files that you have modified but not yet added to the repository.  "Untracked files" are files that have not previously been added to the repository.
 
-   The output of ``git status`` will look something like this::
-
-     $ git status
-     # On branch master
-     # Changed but not updated:
-     #   (use "git add <file>..." to update what will be committed)
-     #   (use "git checkout -- <file>..." to discard changes in working directory)
-     #
-     #  modified:   version-control.rst
-     #
-     # Untracked files:
-     #   (use "git add <file>..." to include in what will be committed)
-     #
-     #  examples/
-     no changes added to commit (use "git add" and/or "git commit -a")
-
-   The files listed as "changed but not updated" are files that you have
-   modified but not yet added to the repository.  "Untracked files" are
-   files that have not previously been added to the repository.
-
-git: What's changed: diffs
-==========================
+## git: What's changed: diffs
 
 Use ``git diff`` to see pending changes in your working copy::
 
-  git diff
+``` 
+git diff
+```
 
-.. container:: handout
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-diff.html
 
-   [documentation__]
-
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-diff.html
-
-   The output of ``git diff`` is standard diff output, e.g.::
-
+The output of ``git diff`` is standard diff output, e.g.::
+```
      $ git diff
      diff --git a/version-control.rst b/version-control.rst
      index e518192..b1c519a 100644
@@ -195,54 +186,41 @@ Use ``git diff`` to see pending changes in your working copy::
      +
      +   The output will look something like this::
      +
+```
+You can also use ``git diff`` to see the changes between arbitrary revisions of your project:
 
-   You can also use ``git diff`` to see the changes between arbitrary
-   revisions of your project:
+   - Changes in working copy vs. previous commit:
 
-   - Changes in working copy vs. previous commit::
+       `git diff <commit>`
 
-       git diff <commit>
+   - Changes between two previous commits:
 
-   - Changes between two previous commits::
+       `git diff <commit1> <commit2>`
 
-       git diff <commit1> <commit2>
-
-git: Cloning a remote repository
-================================
+## git: Cloning a remote repository
 
 Use the ``git clone`` command to check out a working copy of a remote
 repository::
 
   git clone REPOSITORY [DIRECTORY]
 
-.. container:: handout
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-clone.html
 
-   [documentation__]
+``git clone`` will clone the remote repository to a new directory in your current directory named after the repository, unless you explicitly provide a name with the *DIRECTORY* argument.
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-clone.html
+This is analogous to Subversion's ``checkout`` operation.
 
-   ``git clone`` will clone the remote repository to a new directory in
-   your current directory named after the repository, unless you explicitly
-   provide a name with the *DIRECTORY* argument.
+You can only clone the top-level repository; unlike Subversion, git does not allow you to clone individual subtrees.
 
-   This is analogous to Subversion's ``checkout`` operation.
+## git: Updating your working copy
 
-   You can only clone the top-level repository; unlike Subversion, git does
-   not allow you to clone individual subtrees.
+Use ``git pull`` to update your local repository from the remote repository and merge changes into your working copy::
 
-git: Updating your working copy
-===============================
+```
+git pull [REPOSITORY [REFSPEC]]
+```
 
-Use ``git pull`` to update your local repository from the remote repository
-and merge changes into your working copy::
-
-  git pull [REPOSITORY [REFSPEC]]
-
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-pull.html
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-pull.html
 
    ``git pull`` by itself will pull changes from the remote repository
    defined by the ``branch.master.remote`` config option (which will
@@ -254,18 +232,16 @@ and merge changes into your working copy::
 
      $ git pull origin master
 
-git: Pushing changes
-====================
+# git: Pushing changes
+
 
 Use ``git push`` to send your committed changes to a remote repository::
 
-  git push [REPOSITORY [REFSPEC]]
+```
+git push [REPOSITORY [REFSPEC]]
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-push.html
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-push.html
 
    ``git push`` by itself will push your changes to the remote repository
    defined by the ``branch.master.remote`` config option (which will
@@ -275,7 +251,9 @@ Use ``git push`` to send your committed changes to a remote repository::
    command line, e.g, to push your changes to branch *master* at a remote
    named *origin*::
 
-     $ git push origin master
+```
+$ git push origin master
+```
 
    Git doesn't like you pushing into a remote repository that is associated
    with a working tree (because this could cause unexpected changes for
@@ -286,15 +264,16 @@ Use ``git push`` to send your committed changes to a remote repository::
    If you attempt to push to a repository that is newer than your working
    copy you will see an error similar to the following::
 
-     $ git push
-     To dottiness.seas.harvard.edu:repos/myproject
-      ! [rejected]        master -> master (non-fast forward)
-     error: failed to push some refs to 'dottiness.seas.harvard.edu:repos/myproject'
-
+```
+$ git push
+To dottiness.seas.harvard.edu:repos/myproject
+! [rejected]        master -> master (non-fast forward)
+error: failed to push some refs to 'dottiness.seas.harvard.edu:repos/myproject'
+```
    To fix this, run ``git pull`` and deal with any conflicts.
 
-git: Conflicts
-==============
+## git: Conflicts
+
 
 A conflict occurrs when two people make overlapping changes.
 
@@ -302,11 +281,10 @@ A conflict occurrs when two people make overlapping changes.
 - You may discard your changes, discard the repository changes, or
   attempt to correct things manually.
 
-.. container:: handout
 
-   If you attempt to pull in changes that conflict with your working tree,
-   you will see an error similar to the following::
+If you attempt to pull in changes that conflict with your working tree, you will see an error similar to the following:
 
+```
      $ git pull
      remote: Counting objects: 5, done.
      remote: Compressing objects: 100% (3/3), done.
@@ -317,10 +295,11 @@ A conflict occurrs when two people make overlapping changes.
      Auto-merging README
      CONFLICT (content): Merge conflict in README
      Automatic merge failed; fix conflicts and then commit the result.
+```
+   
+To resolve the conflict manually:
 
-   To resolve the conflict manually:
-
-   - Edit the conflicting files as necessary.
+- Edit the conflicting files as necessary.
 
    To discard your changes (and accept the remote repository version)::
 
@@ -335,22 +314,19 @@ A conflict occurrs when two people make overlapping changes.
    - add the files with ``git add``
    - commit the changes with ``git commit``.
 
-git: Viewing history
-====================
+## git: Viewing history
 
 The ``git log`` command shows you the history of your repository::
 
-  git log [PATH]
+```
+git log [PATH]
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-log.html
+*  http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-log.html
 
    ``git log`` with no arguments shows you the commit messages for each
    revision in your repository::
-
+```
      $ git log
      commit 7c8c3e71893d7481fdd9c13ec8f53cb9c61fac50
      Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
@@ -375,96 +351,90 @@ The ``git log`` command shows you the history of your repository::
      Date:   Thu Mar 18 12:46:45 2010 -0400
      
          initial import
+```
 
-git: Tagging and branching
-==========================
+## git: Tagging and branching
+
 
 - Git has explicit support for tagging and branching.
 - ``git tag`` manipulates tags
 - ``git branch`` and ``git checkout`` manipulate branches
 
-git: Tags
-=========
 
-Create a tag::
+Create a tag:
 
-  git tag [-a] TAGNAME
+```
+git tag [-a] TAGNAME
+```
 
 - Creates a *lightweight* tag (an alias for a commit object)
 - Add ``-a`` to create an annotated tag (i.e., with an associated message)
 - Also possible to create cryptographically signed tags
 
-.. container:: handout
+*  http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-tag.html
 
-   [documentation__]
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-tag.html
-
-git: Tags
-=========
-
-List tags::
-
-  git tag
-
+List tags:
+```
+git tag
+```
 Information about a specific tag::
+```
+git tag -v TAGNAME
+```
 
-  git tag -v TAGNAME
-
-git: Branches
-=============
+## git: Branches
 
 List branches::
 
-  git branch
+```
+git branch
+```
 
 Create a branch rooted at *START*::
 
-  git branch BRANCHNAME [START]
+```
+git branch BRANCHNAME [START]
+```
 
-.. container:: handout
-
-   [documentation__]
-
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-branch.html
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-branch.html
 
    If you omit *START*, the branch is rooted at your current HEAD.
 
-git: Branches
-=============
 
 Switch to a branch::
 
-  git checkout BRANCHNAME
+```
+git checkout BRANCHNAME
+```
 
-Create a branch rooted at *START* and switch to it::
+Create a branch rooted at *START* and switch to it:
+```
+git checkout -b BRANCHNAME [START]
+```
 
-  git checkout -b BRANCHNAME [START]
+For example, you want to enhance your code with some awesome experimental code.  You create a new *seas-workshop-dev* branch and switch to it:
 
-.. container:: handout
+```
+$ git checkout -b seas-workshop-dev
+```
 
-   For example, you want to enhance your code with some awesome
-   experimental code.  You create a new *seas-workshop-dev* branch and switch
-   to it::
-
-     $ git checkout -b seas-workshop-dev
-
-   You make some changes, and when things are working you commit your
-   branch::
+You make some changes, and when things are working you commit your branch:
 
      $ git commit -m 'made some awesome changes' -a
 
-   And then merge it into the master branch::
+And then merge it into the master branch::
+```
+$ git checkout master
+$ git merge seas-workshop-dev
+Updating 1288ed3..33e4a4c
+Fast-forward
+ version-control.rst |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+```
 
-     $ git checkout master
-     $ git merge seas-workshop-dev
-     Updating 1288ed3..33e4a4c
-     Fast-forward
-      version-control.rst |    2 ++
-      1 files changed, 2 insertions(+), 0 deletions(-)
+## git: the index
 
-git: the index
-==============
 
 Git is not really just like Subversion (or most other version control
 solutions).
