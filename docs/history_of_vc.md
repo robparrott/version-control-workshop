@@ -1,7 +1,7 @@
 History of version control
 ==========================
 
-In the beginning (c. 1985), there was RCS.
+In the beginning (c. 1985), there was `RCS`.
 
 - uses locking to manage conflicts.
 
@@ -13,7 +13,7 @@ But...
 
 ----
 
-RCS begat CVS_.
+RCS begat `CVS`.
 
 - uses merging and conflict detection to manage conflicts.
 - supports distributed operation.
@@ -25,13 +25,12 @@ But...
 
 ----
 
-CVS begat Subversion_.
+`CVS` begat `Subversion`.
 
 - designed to address problems in CVS
 - command line familiar to CVS users.
 - atomic operations, handles directories and renames.
 
-.. container:: handout
 
    The Subversion documentation describes the development of Subversion
    thusly:
@@ -48,15 +47,13 @@ CVS begat Subversion_.
 
 The version control explosion.
 
-.. image:: images/kaboom.png
-   :align: right
-   :width: 600
+![kaboom.png](../images/kaboom.png)
 
-- git_
-- Bazaar_
-- darcs_
-- Mercurial_
-- monotone_
+- `git`
+- `Bazaar`
+- `darcs`
+- `Mercurial`
+- `monotone`
 
 .. class:: handout
 
