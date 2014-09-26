@@ -309,33 +309,33 @@ git log [PATH]
 
 *  http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-log.html
 
-   ``git log`` with no arguments shows you the commit messages for each
-   revision in your repository::
+``git log`` with no arguments shows you the commit messages for each revision in your repository:
+   
 ```
-     $ git log
-     commit 7c8c3e71893d7481fdd9c13ec8f53cb9c61fac50
-     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
-     Date:   Thu Mar 18 12:46:46 2010 -0400
+$ git log
+commit 7c8c3e71893d7481fdd9c13ec8f53cb9c61fac50
+Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+Date:   Thu Mar 18 12:46:46 2010 -0400
      
-         changed GNU to Microsoft
+   changed GNU to Microsoft
      
-     commit 257f2f3ff44c2165c1182d3673a825fcadf121aa
-     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
-     Date:   Thu Mar 18 12:46:46 2010 -0400
+commit 257f2f3ff44c2165c1182d3673a825fcadf121aa
+Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+Date:   Thu Mar 18 12:46:46 2010 -0400
      
-         made a change
+   made a change
      
-     commit 99c4fb8f37e48284d79c7396aaf755b514d6a249
-     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
-     Date:   Thu Mar 18 12:46:45 2010 -0400
+commit 99c4fb8f37e48284d79c7396aaf755b514d6a249
+Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+Date:   Thu Mar 18 12:46:45 2010 -0400
      
-         made some changes
+   made some changes
      
-     commit 20cc63576f7c88541f5b9471e20f4d1c5f8afcb9
-     Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
-     Date:   Thu Mar 18 12:46:45 2010 -0400
+commit 20cc63576f7c88541f5b9471e20f4d1c5f8afcb9
+Author: Lars Kellogg-Stedman <lars@seas.harvard.edu>
+Date:   Thu Mar 18 12:46:45 2010 -0400
      
-         initial import
+   initial import
 ```
 
 ## git: Tagging and branching
