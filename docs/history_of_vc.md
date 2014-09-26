@@ -74,15 +74,15 @@ was itself a fork of `GNU arch`.
 Darcs
 -----
 
-Darcs_ was developed in 2002 as a result of the author's experience with
-`Gnu arch`_.
+`Darcs` was developed in 2002 as a result of the author's experience with
+`Gnu arch`.
 
 .. class:: handout
 
 Monotone
 --------
 
-Monotone was initially released in 2003.  In 2005 it was briefly a
+`Monotone` was initially released in 2003.  In 2005 it was briefly a
 candidate for replacing BitKeeper_ for use in Linux kernel development.
 
 Links
@@ -95,9 +95,9 @@ Links
 * [aegis](http://aegis.sourceforge.net/)
 * [bazaar](http://bazaar.canonical.com/en/)
 * [mercurial](http://mercurial.selenic.com/)
-* [darcs](http://www.darcs.net/
-* [monotone](http://www.monotone.ca/) and subsequent [rejection](http://kerneltrap.org/node/4966
-* [bitkeeper](http://www.bitkeeper.com/
-* [baz](http://en.wikipedia.org/wiki/Bazaar_(software)#Baz:_an_earlier_Canonical_Ltd_version_control_system
+* [darcs](http://www.darcs.net/)
+* [monotone](http://www.monotone.ca/) and subsequent [rejection](http://kerneltrap.org/node/4966)
+* [bitkeeper](http://www.bitkeeper.com/)
+* [baz](http://en.wikipedia.org/wiki/Bazaar_(software)#Baz:_an_earlier_Canonical_Ltd_version_control_system)
 * [gnu arch](http://en.wikipedia.org/wiki/GNU_arch)
 
