@@ -6,18 +6,20 @@ An Introduction to Version Control
 * Author: Robert Parrott <robparrott@gmail.com>
 
 
-.. include:: intro.rst
+## Contents:
 
-.. include:: why_use_vc.rst
+* [Introduction](docs/intro.md)
 
-.. include:: vocabulary.rst
+* [Why Use Version Control](docs/why_use_vc.md)
 
-.. include:: history_of_vc.rst
+* [Vocabulary](docs/vocabulary.md)
 
-.. include:: vc_models.rst
+* [History of Version Control](docs/history_of_vc.md)
 
-.. include:: subversion.rst
+* [Version Control Models](docs/vc_models.md)
 
-.. include:: git.rst
+* [Subversion](docs/subversion.md)
 
-.. include:: seealso.rst
+* [Git](docs/git.md)
+
+* [See Also](docs/seealso.md)
