@@ -10,16 +10,16 @@ h2. Contents:
 
 * [Introduction](docs/intro.md)
 
-* [docs/why_use_vc.md]
+* [Why Use Version Control](docs/why_use_vc.md)
 
-* [docs/vocabulary.md]
+* [Vocabulary](docs/vocabulary.md)
 
-* [docs/history_of_vc.md]
+* [History of Version Control](docs/history_of_vc.md)
 
-* [docs/vc_models.md]
+* [Version Control Models](docs/vc_models.md)
 
-* [docs/subversion.md]
+* [Subversion](docs/subversion.md)
 
-* [docs/git.md]
+* [Git](docs/git.md)
 
-* [docs/seealso.md]
+* [See Also](docs/seealso.md)
