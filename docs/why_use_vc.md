@@ -6,8 +6,6 @@ Protection.
 
 Version control is like having infinite undo.
 
-.. container:: handout
-
    - Imagine that you are working on some code.  You get it working, but
      then make a few additional changes.  You return to the code later that
      day to find that you broke it.  Version control makes it easy to see
@@ -20,15 +18,11 @@ Version control is like having infinite undo.
      your code in order to fix a problem without losing all of your
      intervening work.
 
-Why version control?
-====================
 
 Isolation.
 ----------
 
 Version control makes it easy to experiment with your code.
-
-.. container:: handout
 
    - You can test out experimental features in a dedicated branch of your
      project without affecting the production code (or the work of your
@@ -37,8 +31,6 @@ Version control makes it easy to experiment with your code.
      You can merge your changes into another branch or discard them when
      you have finished experimenting.
 
-Why version control?
-====================
 
 Collaboration.
 --------------
@@ -46,7 +38,6 @@ Collaboration.
 Version control makes it easier for multiple developers to work on the same
 project.
 
-.. container:: handout
 
    - It makes it easier to share code.
 
