@@ -21,15 +21,15 @@ THEME = seas
 # These are the "sources" for our presentation.
 
 RSTDOCS = \
-	git.rst \
-	history_of_vc.rst \
-	intro.rst \
-	seealso.rst \
-	subversion.rst \
-	vc_models.rst \
-	version-control.rst \
-	why_use_vc.rst \
-	vocabulary.rst
+	rst/git.rst \
+	rst/history_of_vc.rst \
+	rst/intro.rst \
+	rst/seealso.rst \
+	rst/subversion.rst \
+	rst/vc_models.rst \
+	rst/version-control.rst \
+	rst/why_use_vc.rst \
+	rst/vocabulary.rst
 
 SVGDOCS = $(shell ls images/*.svg)
 
@@ -61,7 +61,7 @@ STATIC = \
 	ui/seas/slides.css
 
 # Where to install the rendered presentation.
-DESTDIR = $(HOME)/public_html/version-control-workshop
+DESTDIR = ./output
 
 # A list of all generated documents (so we can remove them).
 #GENERATED = $(HTMLDOCS) $(PNGDOCS)
