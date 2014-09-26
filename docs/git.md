@@ -119,11 +119,9 @@ git mv SRC DST
 
 Use ``git rm`` to remove files from the repository::
 
-  git rm PATH [...]
-
-.. container:: handout
-
-   [documentation__]
+```
+git rm PATH [...]
+```
 
 * http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-rm.html
 
