@@ -6,6 +6,8 @@ An Introduction to Version Control
 * Author: Robert Parrott <robparrott@gmail.com>
 
 
+h2. Contents:
+
 * (docs/intro.md)
 
 * [docs/why_use_vc.md]
