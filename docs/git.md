@@ -4,101 +4,108 @@ git: Introduction
 Git is a distributed version control system originally developed by Linus
 Torvalds as a replacement for BitKeeper.
 
-git: Getting help
-=================
+## git: Getting help
 
-- Most commands have built-in documentation you can access with the
+Most commands have built-in documentation you can access with the
   ``--help`` option::
 
-    git init --help
+```
+git init --help
+```
 
 - Also available via ``man``, e.g::
 
-    man git-init
+```
+man git-init
+```
 
-git: Creating a repository
-==========================
+## git: Creating a repository
 
-Use ``git init`` to create a git repository in your current directory::
 
-  git init
+Use `git init` to create a git repository in your current directory::
 
-.. container:: handout
+```
+git init
+```
 
-   [documentation__]
+-  http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-init.html
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-init.html
+``git init`` creates a git repository (named ``.git``) in your current
+working directory.  You will add files to this repository using ``git
+add``.  This gives you a repository (the ``.git`` directory) and a
+working copy (everything else).
 
-   ``git init`` creates a git repository (named ``.git``) in your current
-   working directory.  You will add files to this repository using ``git
-   add``.  This gives you a repository (the ``.git`` directory) and a
-   working copy (everything else).
+If you are going to start tracking an existing project with git, you
+will generally start like this::
 
-   If you are going to start tracking an existing project with git, you
-   will generally start like this::
+```
+$ git init
+Initialized empty Git repository in .../.git/
+$ git add .
+$ git commit -m 'initial import'
+```
 
-     $ git init
-     Initialized empty Git repository in .../.git/
-     $ git add .
-     $ git commit -m 'initial import'
+If you are creating a repository that people will be accessing remotely,
+you will normally want to create a "bare" repository, which consists of
+just the contents of the ``.git`` directory and no working copy.  You do
+this with the ``-b`` flag::
 
-   If you are creating a repository that people will be accessing remotely,
-   you will normally want to create a "bare" repository, which consists of
-   just the contents of the ``.git`` directory and no working copy.  You do
-   this with the ``-b`` flag::
+```
+$ git init -b
+```
 
-     $ git init -b
+## git: Adding files
 
-git: Adding files
-=================
+`git add` schedules files to be committed to the repository.
 
-``git add`` schedules files to be committed to the repository.
-
+  
+```
   git add PATH [PATH ...]
+```
 
-.. container:: handout
+* http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-add.html
 
-   [documentation__]
+Unlike Subversion, if you modify a file you (generally) need to ``git
+add`` that file in order to make the changes part of the next commit.
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-add.html
+Use the ``git reset`` command to "undo" an add operation::
 
-   Unlike Subversion, if you modify a file you (generally) need to ``git
-   add`` that file in order to make the changes part of the next commit.
+```
+git reset HEAD
+```
 
-   Use the ``git reset`` command to "undo" an add operation::
+This resets the index but leaves your working directory untouched. You
+can also use ``git reset`` to revert to a previous commit; read the
+documentation for more information.
 
-     git reset HEAD
+## git: Committing changes
 
-   This resets the index but leaves your working directory untouched. You
-   can also use ``git reset`` to revert to a previous commit; read the
-   documentation for more information.
-
-git: Committing changes
-=======================
 
 Use ``git commit`` to commit files to your local repository::
 
-  git commit [-a] [PATH ...]
+```  
+git commit [-a] [PATH ...]
+```
 
-.. container:: handout
 
-   [documentation__]
+*  http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-commit.html
 
-   .. __: http://www.kernel.org/pub/software/scm/git/docs/v1.6.6.2/git-commit.html
+``git commit`` by itself will commit any changes scheduled using ``git
+add``.  If you would like to commit all locally modified files, use the
+``-a`` option::
 
-   ``git commit`` by itself will commit any changes scheduled using ``git
-   add``.  If you would like to commit all locally modified files, use the
-   ``-a`` option::
+```
+git commit -a
+```
 
-     git commit -a
+You may also commit a subset of modified files by specifying paths on the command line::
 
-   You may also commit a subset of modified files by specifying paths on
-   the command line::
+```
+git commit path/to/modified/file
+```
 
-     git commit path/to/modified/file
+## git: Renaming files
 
-git: Renaming files
-===================
 
 Use ``git mv`` to rename files in the repository::
 
