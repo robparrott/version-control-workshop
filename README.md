@@ -8,7 +8,7 @@ An Introduction to Version Control
 
 h2. Contents:
 
-* (docs/intro.md)
+* [Introduction](docs/intro.md)
 
 * [docs/why_use_vc.md]
 
