@@ -52,7 +52,6 @@ There is no spoon.
 
 ![nospoon.png](../images/nospoon.png)  
 
-.. container:: handout
 
    In the world of distributed version control, the idea of a central
    repository is a social construct rather than a technical one.  While
