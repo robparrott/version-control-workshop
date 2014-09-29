@@ -1,6 +1,6 @@
-==================================
-An Introduction to Version Control
-==================================
+
+# An Introduction to Version Control
+
 
 * Author: Lars Kellogg-Stedman <lars@larsshack.org>
 * Author: Robert Parrott <robparrott@gmail.com>
