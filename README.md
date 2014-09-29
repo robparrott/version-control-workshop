@@ -14,4 +14,3 @@
 * [Version Control Models](docs/vc_models.md)
 * [Subversion](docs/subversion.md)
 * [Git](docs/git.md)
-* [See Also](docs/seealso.md)
