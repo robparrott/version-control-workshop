@@ -1,8 +1,8 @@
-Why version control?
-====================
+# Why version control?
 
-Protection.
------------
+
+## Protection.
+
 
 Version control is like having infinite undo.
 
@@ -19,8 +19,8 @@ Version control is like having infinite undo.
      intervening work.
 
 
-Isolation.
-----------
+## Isolation.
+
 
 Version control makes it easy to experiment with your code.
 
@@ -32,8 +32,8 @@ Version control makes it easy to experiment with your code.
      you have finished experimenting.
 
 
-Collaboration.
---------------
+## Collaboration.
+
 
 Version control makes it easier for multiple developers to work on the same
 project.
@@ -51,3 +51,9 @@ project.
      keeps track of who has made which changes.  If a problem crops up,
      it's easy to identify the person responsible for the change.
 
+## Automation & DevOps
+
+Soucre control has become a central concept in how code is built, tested and released into production. 
+
+- The use of source control in configuration and management and "Infrastructure as code" means that the entire state of a running environment -- from app code to storage size and type -- can be captured in version control.
+- Using CI tools such as jenkins to launch builds and deploys from commits, as well as the centrality of Git in PaaS environments such as Heroku, has made source control the first -- and sometimes last -- step in the release and deployment process. 
